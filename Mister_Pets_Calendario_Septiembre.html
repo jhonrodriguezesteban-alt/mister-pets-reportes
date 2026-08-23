@@ -121,8 +121,12 @@
   .cc-type.stories{background:var(--blue);}
   .cc-body p{margin:5px 0;font-size:13px;line-height:1.55;}
   .cc-body .label{font-weight:800;color:var(--ink);}
-  .cc-prod-img{width:100%;max-height:220px;object-fit:cover;display:block;border-top:1px solid #F2E9DE;border-bottom:1px solid #F2E9DE;}
-  .ci-thumb{width:36px;height:36px;border-radius:8px;object-fit:cover;flex-shrink:0;}
+  .cc-prod-img{width:100%;max-height:220px;object-fit:cover;display:block;border-top:1px solid #F2E9DE;border-bottom:1px solid #F2E9DE;cursor:zoom-in;}
+  .ci-thumb{width:36px;height:36px;border-radius:8px;object-fit:cover;flex-shrink:0;cursor:zoom-in;}
+  .lightbox-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;align-items:center;justify-content:center;padding:20px;}
+  .lightbox-overlay.active{display:flex;}
+  .lightbox-overlay img{max-width:100%;max-height:85vh;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.4);}
+  .lightbox-close{position:fixed;top:16px;right:16px;background:#fff;border:none;width:40px;height:40px;border-radius:50%;font-size:18px;font-weight:800;color:var(--purple);cursor:pointer;z-index:201;}
   .vo-box{background:var(--cream);border-radius:10px;padding:10px 12px;margin:6px 0;font-style:italic;font-size:13px;line-height:1.55;border-left:3px solid var(--purple);}
 
   @media (max-width: 640px){
@@ -242,6 +246,11 @@
     </div>
     <div id="modalBody"></div>
   </div>
+</div>
+
+<div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox(event)">✕</button>
+  <img id="lightboxImg" src="" alt="Producto ampliado">
 </div>
 
 <script>
@@ -484,7 +493,7 @@ function openDay(day){
         <div class="cc-title">${p.title}</div>
         <div class="cc-type ${p.type}">${p.tipoLabel}</div>
       </div>
-      ${imgSrc ? `<img class="cc-prod-img" src="${imgSrc}" alt="Producto">` : ''}
+      ${imgSrc ? `<img class="cc-prod-img" src="${imgSrc}" alt="Producto" onclick="openLightbox('${imgSrc}', event)">` : ''}
       <div class="cc-body">
         <p><span class="label">Producto:</span> ${p.product}</p>
         ${p.vo ? `<p><span class="label">Voz en off (guion literal):</span></p><div class="vo-box">${p.vo}</div>` : `<p><span class="label">Guion / idea:</span> ${p.guion}</p>`}
@@ -498,6 +507,16 @@ function openDay(day){
   document.getElementById('modalOverlay').classList.add('active');
 }
 function closeModal(){ document.getElementById('modalOverlay').classList.remove('active'); }
+
+function openLightbox(src, evt){
+  if(evt) evt.stopPropagation();
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightboxOverlay').classList.add('active');
+}
+function closeLightbox(evt){
+  if(evt) evt.stopPropagation();
+  document.getElementById('lightboxOverlay').classList.remove('active');
+}
 document.getElementById('modalOverlay').addEventListener('click', e=>{ if(e.target.id==='modalOverlay') closeModal(); });
 
 // ===== Tablas de prioridad =====
@@ -559,7 +578,7 @@ MONTH_DAYS.forEach(day=>{
 
 function thumbHtml(it){
   const src = it.img && IMAGES_B64[it.img] ? `data:image/jpeg;base64,${IMAGES_B64[it.img]}` : null;
-  return src ? `<img class="ci-thumb" src="${src}" alt="">` : '';
+  return src ? `<img class="ci-thumb" src="${src}" alt="" onclick="openLightbox('${src}', event)">` : '';
 }
 
 function renderCheckList(containerId, items){
