@@ -176,18 +176,18 @@
   </div>
   <button class="reset-btn" onclick="resetChecklist()">Reiniciar checklist</button>
 
-  <div class="check-group">
-    <div class="check-group-title">🎬 Reels (9)</div>
-    <div id="checklistReels"></div>
-  </div>
-  <div class="check-group">
-    <div class="check-group-title">🖼️ Carruseles (5)</div>
-    <div id="checklistCarousels"></div>
-  </div>
-  <div class="check-group">
-    <div class="check-group-title">🎵 TikToks (4)</div>
-    <div id="checklistTiktoks"></div>
-  </div>
+  <details class="week-accordion">
+    <summary>🎬 Reels (9)</summary>
+    <div class="week-body" id="checklistReels"></div>
+  </details>
+  <details class="week-accordion">
+    <summary>🖼️ Carruseles (5)</summary>
+    <div class="week-body" id="checklistCarousels"></div>
+  </details>
+  <details class="week-accordion">
+    <summary>🎵 TikToks (4)</summary>
+    <div class="week-body" id="checklistTiktoks"></div>
+  </details>
   <div class="check-group">
     <div class="check-group-title">📲 Estados (90 — agrupados por semana)</div>
     <div id="checklistStories"></div>
@@ -214,7 +214,9 @@
       <li>Los <b>productos quietos con SKU específico</b> (collares MP-539/538/537, pecheras MP-2350 a 53, cepillo MP0818) están repartidos en distintas semanas para forzar su rotación sin saturar un solo formato.</li>
       <li>Cada reel queda listo para <b>reciclarse como creativo de pauta</b> — el guion de voz en off ya está pensado para funcionar tanto en orgánico como en Meta Ads sin reeditar.</li>
       <li><b>Arena y arenero para gatos aparecen todas las semanas</b> en al menos una pieza de alto formato (reel, carrusel o TikTok) además de sus estados, cada vez con un ángulo distinto: semana 1 disponibilidad/stock, semana 2 urgencia del cliente final, semana 3 confiabilidad del proveedor, semana 4 humor sobre peso/logística, semana 5 cierre de mes. Es intencional — la arena es de recompra más frecuente que cualquier otro producto del catálogo, así que necesita presencia constante.</li>
-      <li><b>Enfoque por grupo de referencias, no por SKU único:</b> como somos mayoristas con ~470 referencias, cada pieza sobre collares o pecheras quietas muestra las 4 variantes del grupo (no una sola). La instrucción de edición es enfocar la imagen/video final en la referencia que menos haya rotado esa semana según lo que veas en el reporte de inventario. Así, en un mes completo, el diseño le da la vuelta real a todo el grupo — no solo repetimos la misma referencia cuatro veces.</li>
+      <li><b>Enfoque por grupo de referencias, no por SKU único:</b> como somos mayoristas con ~470 referencias, cada pieza sobre collares o pecheras quietas muestra las 4 variantes del grupo (no una sola). La instrucción de edición es enfocar la imagen/video final en la referencia que menos haya rotado esa semana según lo que veas en el reporte de inventario. Así, en un mes completo, el diseño le da la vuelta real a todo el grupo — no solo repetimos la misma referencia cuatro veces. <b>Esta misma lógica de mix dinámico aplica a todas las familias de producto</b> (juguetes, comederos, ropa, transporte, etc.), no solo a collares y pecheras — cada vez que se planifique contenido nuevo, se arma por grupo de referencias, no por SKU aislado.</li>
+      <li><b>Horarios de estados ajustados a la jornada de Sara:</b> los 3 estados diarios ahora se publican a las 8am, 1pm y 5pm — el de las 5pm es el último del día, coincidiendo con el cierre de su jornada. No hay estados programados después de esa hora.</li>
+      <li><b>Los estados pueden ser foto o clip corto de video</b> — no tienen que ser siempre imagen estática. Para el mismo tipo de creativo (ej. "producto quieto"), alternar entre foto fija y video de 5-10 segundos con distintos ángulos ayuda a que el contenido no se sienta repetitivo aunque se publique el mismo grupo de referencias varias veces en el mes.</li>
     </ul>
   </div>
 </div>
@@ -272,7 +274,7 @@ const CONTENT = {
      guion:'Story de arranque de mes con catálogo destacado del mes.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'"Este mes con novedades — escríbenos"'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Producto ganador: Collar', product:'COLLAR PARA MASCOTA · SKU MP1808 (margen 79%)', vo:null,
      guion:'Foto del collar con precio mayorista destacado.', gatillo:'Gatillo: <b>Comparación de costos</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 7pm', title:'Horario de atención', product:'General', vo:null,
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Horario de atención', product:'General', vo:null,
      guion:'Recordatorio de horario y canal de pedidos.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
   ],
   2: [ // Miércoles
@@ -282,7 +284,7 @@ const CONTENT = {
     {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Collares (rotar el que más lo necesite)', product:'GRUPO COLLARES QUIETOS · SKU MP-539 / MP-538 / MP-537 / MP539-1 (mostrar las 4 referencias, edición enfocada en la de menor rotación esa semana)', img:273, vo:null,
      guion:'Foto del collar con precio especial de rotación.', gatillo:'Sesgo: <b>Efecto señuelo</b>.', cta:'"Pregunta por el precio de rotación"'},
     {type:'stories', tipoLabel:'Estado · 1pm', title:'Encuesta rápida', product:'General', vo:null, guion:'Sticker de encuesta sobre qué categoría de producto necesitan más este mes.', gatillo:'Sesgo: <b>Efecto de exposición repetida</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 8pm', title:'Testimonio de cliente', product:'General', vo:null, guion:'Captura de mensaje de cliente satisfecho (con permiso).', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Testimonio de cliente', product:'General', vo:null, guion:'Captura de mensaje de cliente satisfecho (con permiso).', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
   ],
   3: [ // Jueves
     {type:'reel', tipoLabel:'Reel', title:'"Cuánto le sale en realidad no comprar por mayor"', product:'PECHERA PARA MASCOTA · SKU MP1735 (ejemplo de comparación de precios)', img:246,
@@ -291,26 +293,26 @@ const CONTENT = {
     {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Pecheras (rotar la que más lo necesite)', product:'GRUPO PECHERAS QUIETAS · SKU MP-2350 / MP-2351 / MP-2352 / MP-2353 (mostrar las 4 tallas, edición enfocada en la de menor rotación esa semana)', vo:null,
      guion:'Foto real del producto con tallas disponibles.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'"Dinos la talla que necesitas"'},
     {type:'stories', tipoLabel:'Estado · 3pm', title:'Detrás de cámara: empaque', product:'General', vo:null, guion:'Time-lapse armando pedidos del día.', gatillo:'Driver: <b>Evidencia de uso</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 8pm', title:'Recordatorio stock limitado', product:'Collar ganador MP1808', vo:null, guion:'Contador de unidades restantes.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'"Últimas unidades a este precio"'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Recordatorio stock limitado', product:'Collar ganador MP1808', vo:null, guion:'Contador de unidades restantes.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'"Últimas unidades a este precio"'},
   ],
   4: [ // Viernes
     {type:'tiktok', tipoLabel:'TikTok · Entretenimiento', title:'"Ranking: lo que más piden los mayoristas este mes"', product:'Top 3 ganadores generales',
      guion:'Formato countdown/ranking con música trend. Rápido, sin venta dura — construye reconocimiento de marca para cuando el dueño de tienda necesite proveedor.',
      gatillo:'Gatillo: <b>Efecto de validación social</b>.', cta:'Comentario fijado con catálogo'},
-    {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Cepillo', product:'CEPILLO PARA MASCOTAS · SKU MP0818 (stock 2.936, vendidas 441)', img:33, vo:null,
+    {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo aseo quieto (cepillo + relacionados)', product:'GRUPO ASEO QUIETO · SKU MP0818 (cepillo, referencia principal) + otras referencias de aseo con baja rotación del reporte de inventario', img:33, vo:null,
      guion:'Demo rápida del cepillo en uso.', gatillo:'Gatillo: <b>Dolor / alivio</b>.', cta:'"Este producto rota rápido en mostrador"'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Resumen de la semana', product:'General', vo:null, guion:'Lo más pedido esta semana en formato visual.', gatillo:'Sesgo: <b>Efecto manada</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 7pm', title:'Oferta de fin de semana', product:'Combo de productos quietos', vo:null, guion:'Descuento válido solo sábado-domingo.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'"Válido solo este fin de semana"'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Oferta de fin de semana', product:'Combo de productos quietos', vo:null, guion:'Descuento válido solo sábado-domingo.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'"Válido solo este fin de semana"'},
   ],
   5: [ // Sábado
     {type:'stories', tipoLabel:'Estado · 10am', title:'Recordatorio oferta de fin de semana', product:'Combo quietos', vo:null, guion:'Repetir oferta del viernes.', gatillo:'Driver: <b>Oferta por tiempo limitado</b> (refuerzo).', cta:'"Últimas horas"'},
     {type:'stories', tipoLabel:'Estado · 3pm', title:'Cliente destacado', product:'General', vo:null, guion:'Reconocimiento a cliente mayorista frecuente (con permiso).', gatillo:'Driver: <b>Reconocimiento social</b>.', cta:'"¿Quieres ser el destacado de la próxima semana?"'},
-    {type:'stories', tipoLabel:'Estado · 6pm', title:'Última llamada oferta', product:'Combo quietos', vo:null, guion:'Cuenta regresiva de horas restantes.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'"Se acaba en unas horas"'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Última llamada oferta', product:'Combo quietos', vo:null, guion:'Cuenta regresiva de horas restantes.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'"Se acaba en unas horas"'},
   ],
   6: [ // Domingo
     {type:'stories', tipoLabel:'Estado · 9am', title:'Teaser de la semana entrante', product:'General', vo:null, guion:'Adelanto de nuevo contenido/promo.', gatillo:'Gatillo: <b>Expectativa</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Contenido ligero de marca', product:'General', vo:null, guion:'Foto de mascota de algún cliente (con permiso), sin venta.', gatillo:'Sesgo: <b>Sesgo de positividad</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 7pm', title:'Cierre de semana', product:'General', vo:null, guion:'Recordatorio de horario de atención lunes.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'"Nos vemos mañana"'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Cierre de semana', product:'General', vo:null, guion:'Recordatorio de horario de atención lunes.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'"Nos vemos mañana"'},
   ],
   7: [ // Lunes semana 2
     {type:'reel', tipoLabel:'Reel', title:'"Lo que revisa un comprador antes de cambiar de proveedor"', product:'Catálogo mostrado con COLLAR MP1808 + ARNÉS MP1720 + JUGUETE MP1037 (los 3 productos con mejor margen)', img:184,
@@ -318,12 +320,12 @@ const CONTENT = {
      gatillo:'Gatillo: <b>Autoridad</b> + Driver: <b>Resultados medibles</b>.', cta:'"Escríbenos y compara tú mismo"'},
     {type:'stories', tipoLabel:'Estado · 8am', title:'Nueva semana, catálogo activo', product:'General', vo:null, guion:'Recordatorio de catálogo disponible.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Producto ganador: Juguete', product:'JUGUETE PARA MASCOTA · SKU MP1037 (#1 en utilidad)', img:184, vo:null, guion:'Video corto de mascota jugando.', gatillo:'Gatillo: <b>Sorpresa</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 7pm', title:'Testimonio', product:'General', vo:null, guion:'Mensaje de cliente satisfecho.', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Testimonio', product:'General', vo:null, guion:'Mensaje de cliente satisfecho.', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
   ],
   8: [ // Martes
     {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Collares (semana 2)', product:'GRUPO COLLARES QUIETOS · SKU MP-539 / MP-538 / MP-537 / MP539-1 (segunda pasada — priorizar en edición el que quedó con menos avance en la semana 1)', img:273, vo:null, guion:'Foto de las 4 referencias juntas con precio destacado.', gatillo:'Sesgo: <b>Efecto señuelo</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 1pm', title:'Pregunta a la audiencia', product:'General', vo:null, guion:'"¿Qué categoría quieres ver en oferta?"', gatillo:'Driver: <b>Reciprocidad anticipada</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 8pm', title:'Recordatorio horario', product:'General', vo:null, guion:'Horario de atención.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Recordatorio horario', product:'General', vo:null, guion:'Horario de atención.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
   ],
   9: [ // Miércoles
     {type:'carousel', tipoLabel:'Carrusel', title:'"5 productos que todo petshop debería tener en mostrador"', product:'Mix: Collar + Arnés + Juguete + Comedero + Arenero',
@@ -331,7 +333,7 @@ const CONTENT = {
      gatillo:'Gatillo: <b>Autoridad</b> + Driver: <b>Resultados medibles</b>.', cta:'"Cotiza tu pedido mixto"'},
     {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Pecheras (semana 2)', product:'GRUPO PECHERAS QUIETAS · SKU MP-2350 / MP-2351 / MP-2352 / MP-2353 (segunda pasada — priorizar en edición la talla con menos avance)', vo:null, guion:'Foto real con las 4 tallas.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 3pm', title:'Repost del reel del lunes', product:'Reciclado', vo:null, guion:'Mejor clip del reel del lunes en formato story.', gatillo:'Driver: <b>Resultados medibles</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 8pm', title:'Behind the scenes', product:'General', vo:null, guion:'Empaque de pedidos.', gatillo:'Driver: <b>Entrega express</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Behind the scenes', product:'General', vo:null, guion:'Empaque de pedidos.', gatillo:'Driver: <b>Entrega express</b>.', cta:'—'},
   ],
   10: [ // Jueves
     {type:'reel', tipoLabel:'Reel', title:'"Así se calcula el margen real de tu vitrina"', product:'JUGUETE PARA MASCOTA · SKU MP1037 (ejemplo del cálculo)', img:184,
@@ -339,40 +341,40 @@ const CONTENT = {
      gatillo:'Sesgo: <b>Efecto de anclaje</b> + Driver: <b>Resultados medibles</b>.', cta:'"Te ayudamos a elegir tu mezcla de producto ideal"'},
     {type:'stories', tipoLabel:'Estado · 9am', title:'Producto ganador: Arenero', product:'ARENERO PARA GATO · SKU MP1280A', vo:null, guion:'Demo rápida del arenero.', gatillo:'Gatillo: <b>Identidad y pertenencia</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Encuesta', product:'General', vo:null, guion:'Encuesta perro/gato para segmentar interés.', gatillo:'Sesgo: <b>Exposición repetida</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 8pm', title:'Recordatorio de pedidos', product:'General', vo:null, guion:'CTA directo de WhatsApp.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Recordatorio de pedidos', product:'General', vo:null, guion:'CTA directo de WhatsApp.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'},
   ],
   11: [ // Viernes
     {type:'tiktok', tipoLabel:'TikTok · Entretenimiento', title:'"POV: se te acaba la arena para gatos y el cliente no puede esperar"', product:'ARENA PARA GATO · SKU AR-01 + ARENERO · SKU MP1280A — Ángulo semana 2: urgencia del cliente final que presiona al tendero', img:5,
      guion:'Formato humor/relatable: dueño de tienda en pánico porque se le acabó la arena justo cuando un cliente la pide. Corte a "con Mister Pets nunca te pasa" mostrando el producto en bodega. Sin hard-sell.',
      gatillo:'Gatillo: <b>Empatía genuina</b>.', cta:'Comentario fijado con catálogo'},
-    {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Juguete MP-2333', product:'JUGUETE PARA MASCOTA · SKU MP-2333 (stock 469, vendidas 31)', img:174, vo:null, guion:'Video de mascota jugando.', gatillo:'Gatillo: <b>Sorpresa</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo juguetes quietos (mix)', product:'GRUPO JUGUETES QUIETOS · SKU MP-2333 (referencia principal) + otras referencias de juguetes con baja rotación del reporte de inventario', img:174, vo:null, guion:'Video corto de mascota jugando con 2-3 referencias distintas del grupo.', gatillo:'Gatillo: <b>Sorpresa</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Resumen semanal', product:'General', vo:null, guion:'Top 3 más pedidos de la semana.', gatillo:'Sesgo: <b>Efecto manada</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 7pm', title:'Oferta de fin de semana', product:'Combo quietos', vo:null, guion:'Descuento fin de semana.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Oferta de fin de semana', product:'Combo quietos', vo:null, guion:'Descuento fin de semana.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
   ],
   12: [ {type:'stories', tipoLabel:'Estado · 10am', title:'Recordatorio oferta', product:'Combo quietos', vo:null, guion:'Repetir oferta.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
         {type:'stories', tipoLabel:'Estado · 3pm', title:'Contenido de marca', product:'General', vo:null, guion:'Contenido casual sin venta.', gatillo:'Sesgo: <b>Positividad</b>.', cta:'—'},
-        {type:'stories', tipoLabel:'Estado · 6pm', title:'Última llamada', product:'Combo quietos', vo:null, guion:'Cuenta regresiva.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'—'} ],
+        {type:'stories', tipoLabel:'Estado · 5pm', title:'Última llamada', product:'Combo quietos', vo:null, guion:'Cuenta regresiva.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'—'} ],
   13: [ {type:'stories', tipoLabel:'Estado · 9am', title:'Teaser semana entrante', product:'General', vo:null, guion:'Adelanto de contenido.', gatillo:'Gatillo: <b>Expectativa</b>.', cta:'—'},
         {type:'stories', tipoLabel:'Estado · 2pm', title:'Domingo de marca', product:'General', vo:null, guion:'Contenido ligero.', gatillo:'Sesgo: <b>Positividad</b>.', cta:'—'},
-        {type:'stories', tipoLabel:'Estado · 7pm', title:'Cierre de semana', product:'General', vo:null, guion:'Recordatorio horario lunes.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'} ],
+        {type:'stories', tipoLabel:'Estado · 5pm', title:'Cierre de semana', product:'General', vo:null, guion:'Recordatorio horario lunes.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'} ],
   14: [ // Lunes semana 3
     {type:'reel', tipoLabel:'Reel', title:'"3 señales de que tu proveedor te está fallando con la arena para gatos"', product:'ARENA PARA GATO · SKU AR-01 + ARENERO · SKU MP1280A — Ángulo semana 3: confiabilidad específica en el producto de mayor recompra', img:5,
      vo:`"Si tu proveedor se demora más de lo normal con la arena para gatos, si te la manda incompleta, o si nunca tiene el arenero que más se vende, esas son tres señales de que necesitas un respaldo. No te decimos que dejes a tu proveedor actual — te decimos que tengas un plan B confiable para el producto que tus clientes compran cada semana. Ese plan B puede ser Mister Pets."`,
      gatillo:'Gatillo: <b>Dolor / alivio</b> + Sesgo: <b>Aversión a la pérdida</b>.', cta:'"Escríbenos y ten tu respaldo listo"'},
     {type:'stories', tipoLabel:'Estado · 8am', title:'Catálogo activo', product:'General', vo:null, guion:'Recordatorio catálogo.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Producto ganador: Arnés', product:'ARNES PARA MASCOTA · SKU MP1720', img:242, vo:null, guion:'Demo de ajuste correcto.', gatillo:'Heurística de disponibilidad.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 7pm', title:'Testimonio', product:'General', vo:null, guion:'Mensaje de cliente.', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Testimonio', product:'General', vo:null, guion:'Mensaje de cliente.', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
   ],
   15: [ {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Collares (semana 3)', product:'GRUPO COLLARES QUIETOS · SKU MP-539 / MP-538 / MP-537 / MP539-1 (tercera pasada — cerrar rotación de las que sigan quietas)', img:273, vo:null, guion:'Foto con precio, cierre de mes para este grupo.', gatillo:'Sesgo: <b>Efecto señuelo</b>.', cta:'—'},
         {type:'stories', tipoLabel:'Estado · 1pm', title:'Pregunta a la audiencia', product:'General', vo:null, guion:'Encuesta de categoría preferida.', gatillo:'Driver: <b>Reciprocidad anticipada</b>.', cta:'—'},
-        {type:'stories', tipoLabel:'Estado · 8pm', title:'Recordatorio horario', product:'General', vo:null, guion:'Horario de atención.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'} ],
+        {type:'stories', tipoLabel:'Estado · 5pm', title:'Recordatorio horario', product:'General', vo:null, guion:'Horario de atención.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'} ],
   16: [ // Miércoles
     {type:'carousel', tipoLabel:'Carrusel', title:'"Antes y después: lo que pasa cuando compras por volumen"', product:'PECHERA MP1735 + COLLAR MP1808 + ARENA PARA GATO AR-01 (ejemplos reales de margen)', img:246,
      guion:'Slide 1: gancho con cifra de margen perdido comprando al detal. Slides 2-4: ejemplos con pechera, collar y arena a precio mayorista vs. detal. Slide 5: CTA de cotización.',
      gatillo:'Sesgo: <b>Efecto de anclaje</b> + Driver: <b>Comparación de costos</b>.', cta:'"Cotiza tu pedido mayorista"'},
     {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Pecheras (semana 3)', product:'GRUPO PECHERAS QUIETAS · SKU MP-2350 / MP-2351 / MP-2352 / MP-2353 (tercera pasada — cerrar rotación de las que sigan quietas)', vo:null, guion:'Foto con tallas, cierre de mes para este grupo.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 3pm', title:'Repost del reel', product:'Reciclado', vo:null, guion:'Clip del reel del lunes.', gatillo:'Driver: <b>Resultados medibles</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 8pm', title:'Behind the scenes', product:'General', vo:null, guion:'Empaque de pedidos.', gatillo:'Driver: <b>Entrega express</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Behind the scenes', product:'General', vo:null, guion:'Empaque de pedidos.', gatillo:'Driver: <b>Entrega express</b>.', cta:'—'},
   ],
   17: [ // Jueves
     {type:'reel', tipoLabel:'Reel', title:'"Lo que nadie te cuenta de tener producto quieto en bodega"', product:'CEPILLO PARA MASCOTAS · SKU MP0818 (ejemplo visual de producto quieto)', img:33,
@@ -380,7 +382,7 @@ const CONTENT = {
      gatillo:'Sesgo: <b>Falacia del costo hundido</b> (para prevenirla) + Driver: <b>Resultados medibles</b>.', cta:'"Te ayudamos a armar tu pedido ideal"'},
     {type:'stories', tipoLabel:'Estado · 9am', title:'Producto ganador: Comedero', product:'COMEDERO PARA MASCOTA', vo:null, guion:'Foto y precio.', gatillo:'Driver: <b>Resultados medibles</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Encuesta', product:'General', vo:null, guion:'Encuesta rápida.', gatillo:'Sesgo: <b>Exposición repetida</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 8pm', title:'Recordatorio de pedidos', product:'General', vo:null, guion:'CTA WhatsApp.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Recordatorio de pedidos', product:'General', vo:null, guion:'CTA WhatsApp.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'},
   ],
   18: [ // Viernes
     {type:'tiktok', tipoLabel:'TikTok · Entretenimiento', title:'"Un día en la vida de un pedido mayorista"', product:'Mix del día: ARENA PARA GATO + COLLARES + JUGUETES (lo que más se despacha)', img:5,
@@ -388,32 +390,32 @@ const CONTENT = {
      gatillo:'Driver: <b>Evidencia de uso</b> + Gatillo: <b>Empatía genuina</b>.', cta:'Comentario fijado con catálogo'},
     {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Collares (revisión final)', product:'GRUPO COLLARES QUIETOS · SKU MP-539 / MP-538 / MP-537 / MP539-1 (revisión final del mes — verificar cuál quedó realmente sin rotar)', img:274, vo:null, guion:'Foto con precio especial de cierre.', gatillo:'Sesgo: <b>Efecto señuelo</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Resumen semanal', product:'General', vo:null, guion:'Top 3 de la semana.', gatillo:'Sesgo: <b>Efecto manada</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 7pm', title:'Oferta de fin de semana', product:'Combo quietos', vo:null, guion:'Descuento fin de semana.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Oferta de fin de semana', product:'Combo quietos', vo:null, guion:'Descuento fin de semana.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
   ],
   19: [ {type:'stories', tipoLabel:'Estado · 10am', title:'Recordatorio oferta', product:'Combo quietos', vo:null, guion:'Repetir oferta.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
         {type:'stories', tipoLabel:'Estado · 3pm', title:'Cliente destacado', product:'General', vo:null, guion:'Reconocimiento a cliente.', gatillo:'Driver: <b>Reconocimiento social</b>.', cta:'—'},
-        {type:'stories', tipoLabel:'Estado · 6pm', title:'Última llamada', product:'Combo quietos', vo:null, guion:'Cuenta regresiva.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'—'} ],
+        {type:'stories', tipoLabel:'Estado · 5pm', title:'Última llamada', product:'Combo quietos', vo:null, guion:'Cuenta regresiva.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'—'} ],
   20: [ {type:'stories', tipoLabel:'Estado · 9am', title:'Teaser semana entrante', product:'General', vo:null, guion:'Adelanto de contenido.', gatillo:'Gatillo: <b>Expectativa</b>.', cta:'—'},
         {type:'stories', tipoLabel:'Estado · 2pm', title:'Domingo de marca', product:'General', vo:null, guion:'Contenido ligero.', gatillo:'Sesgo: <b>Positividad</b>.', cta:'—'},
-        {type:'stories', tipoLabel:'Estado · 7pm', title:'Cierre de semana', product:'General', vo:null, guion:'Recordatorio horario lunes.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'} ],
+        {type:'stories', tipoLabel:'Estado · 5pm', title:'Cierre de semana', product:'General', vo:null, guion:'Recordatorio horario lunes.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'} ],
   21: [ // Lunes semana 4
     {type:'reel', tipoLabel:'Reel', title:'"Por qué el 80% de las tiendas nos piden juguetes y accesorios"', product:'Accesorios de Paseo + Juguetes (categorías #1 y #2)',
      vo:`"No es casualidad: accesorios de paseo y juguetes son las categorías que más rotan en cualquier petshop o veterinaria. Si todavía no tienes un proveedor fijo para estas dos líneas, este es el momento — catálogo completo, precio mayorista, entrega rápida."`,
      gatillo:'Sesgo: <b>Validación social</b> + Driver: <b>Evidencia de uso</b>.', cta:'"Arma tu pedido de estas dos categorías hoy"'},
     {type:'stories', tipoLabel:'Estado · 8am', title:'Catálogo activo', product:'General', vo:null, guion:'Recordatorio catálogo.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Producto ganador: Pechera', product:'PECHERA PARA MASCOTA · SKU MP1735', img:246, vo:null, guion:'Foto con precio.', gatillo:'Driver: <b>Resultados medibles</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 7pm', title:'Testimonio', product:'General', vo:null, guion:'Mensaje de cliente satisfecho.', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Testimonio', product:'General', vo:null, guion:'Mensaje de cliente satisfecho.', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
   ],
-  22: [ {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Cepillo (recordatorio)', product:'CEPILLO PARA MASCOTAS · SKU MP0818', img:33, vo:null, guion:'Foto con precio de rotación.', gatillo:'Gatillo: <b>Dolor / alivio</b>.', cta:'—'},
+  22: [ {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo aseo quieto (recordatorio)', product:'GRUPO ASEO QUIETO · SKU MP0818 + otras referencias de aseo con baja rotación', img:33, vo:null, guion:'Foto con precio de rotación, mostrando 2-3 referencias del grupo.', gatillo:'Gatillo: <b>Dolor / alivio</b>.', cta:'—'},
         {type:'stories', tipoLabel:'Estado · 1pm', title:'Encuesta', product:'General', vo:null, guion:'Pregunta a la audiencia.', gatillo:'Driver: <b>Reciprocidad anticipada</b>.', cta:'—'},
-        {type:'stories', tipoLabel:'Estado · 8pm', title:'Recordatorio horario', product:'General', vo:null, guion:'Horario de atención.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'} ],
+        {type:'stories', tipoLabel:'Estado · 5pm', title:'Recordatorio horario', product:'General', vo:null, guion:'Horario de atención.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'} ],
   23: [ // Miércoles
     {type:'carousel', tipoLabel:'Carrusel', title:'"Lo nuevo del mes en Mister Pets"', product:'ARENA PARA GATO AR-01 + ROPA PARA MASCOTA MP1852-M (margen 61%, categoría emergente)', img:5,
      guion:'Slide 1: gancho de novedades. Slides 2-4: destacar la arena para gatos (producto de recompra constante) y la línea de ropa (margen alto, poco explotada) con precio. Slide 5: CTA de pedido.',
      gatillo:'Gatillo: <b>Expectativa</b> + Driver: <b>Acceso exclusivo</b>.', cta:'"Sé de los primeros en pedir"'},
-    {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Juguete (recordatorio)', product:'JUGUETE PARA MASCOTA · SKU MP-2333', img:174, vo:null, guion:'Video de mascota jugando.', gatillo:'Gatillo: <b>Sorpresa</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo juguetes quietos (recordatorio)', product:'GRUPO JUGUETES QUIETOS · SKU MP-2333 + otras referencias de juguetes con baja rotación', img:174, vo:null, guion:'Video corto con mix de 2-3 referencias del grupo.', gatillo:'Gatillo: <b>Sorpresa</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 3pm', title:'Repost del reel', product:'Reciclado', vo:null, guion:'Clip del reel del lunes.', gatillo:'Driver: <b>Resultados medibles</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 8pm', title:'Behind the scenes', product:'General', vo:null, guion:'Empaque de pedidos.', gatillo:'Driver: <b>Entrega express</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Behind the scenes', product:'General', vo:null, guion:'Empaque de pedidos.', gatillo:'Driver: <b>Entrega express</b>.', cta:'—'},
   ],
   24: [ // Jueves
     {type:'reel', tipoLabel:'Reel', title:'"Así respondemos cuando nos escribes"', product:'COMEDERO PARA MASCOTA · SKU MP1719 (pedido real usado como ejemplo)', img:67,
@@ -421,7 +423,7 @@ const CONTENT = {
      gatillo:'Driver: <b>Entrega express</b> + Gatillo: <b>Evidencia de uso</b>.', cta:'"Escríbenos y compruébalo tú mismo"'},
     {type:'stories', tipoLabel:'Estado · 9am', title:'Producto ganador: Arenero', product:'ARENERO PARA GATO · SKU MP1280A', vo:null, guion:'Demo del producto.', gatillo:'Gatillo: <b>Identidad y pertenencia</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Encuesta', product:'General', vo:null, guion:'Encuesta rápida.', gatillo:'Sesgo: <b>Exposición repetida</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 8pm', title:'Recordatorio de pedidos', product:'General', vo:null, guion:'CTA WhatsApp.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Recordatorio de pedidos', product:'General', vo:null, guion:'CTA WhatsApp.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'},
   ],
   25: [ // Viernes
     {type:'tiktok', tipoLabel:'TikTok · Entretenimiento', title:'"Cosas que solo entiende quien vende arena para gatos"', product:'ARENA PARA GATO · SKU AR-01 + ARENERO · SKU MP1280A — Ángulo semana 4: humor sobre el peso/volumen del producto', img:5,
@@ -429,32 +431,32 @@ const CONTENT = {
      gatillo:'Gatillo: <b>Identidad y pertenencia</b>.', cta:'Comentario fijado con catálogo'},
     {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Pecheras (revisión final)', product:'GRUPO PECHERAS QUIETAS · SKU MP-2350 / MP-2351 / MP-2352 / MP-2353 (revisión final del mes — verificar cuál quedó realmente sin rotar)', vo:null, guion:'Foto con tallas, cierre de mes para este grupo.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Resumen semanal', product:'General', vo:null, guion:'Top 3 más pedidos.', gatillo:'Sesgo: <b>Efecto manada</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 7pm', title:'Oferta de fin de semana', product:'Combo quietos', vo:null, guion:'Descuento fin de semana.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Oferta de fin de semana', product:'Combo quietos', vo:null, guion:'Descuento fin de semana.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
   ],
   26: [ {type:'stories', tipoLabel:'Estado · 10am', title:'Recordatorio oferta', product:'Combo quietos', vo:null, guion:'Repetir oferta.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
         {type:'stories', tipoLabel:'Estado · 3pm', title:'Cliente destacado', product:'General', vo:null, guion:'Reconocimiento a cliente.', gatillo:'Driver: <b>Reconocimiento social</b>.', cta:'—'},
-        {type:'stories', tipoLabel:'Estado · 6pm', title:'Última llamada', product:'Combo quietos', vo:null, guion:'Cuenta regresiva.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'—'} ],
+        {type:'stories', tipoLabel:'Estado · 5pm', title:'Última llamada', product:'Combo quietos', vo:null, guion:'Cuenta regresiva.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'—'} ],
   27: [ {type:'stories', tipoLabel:'Estado · 9am', title:'Teaser cierre de mes', product:'General', vo:null, guion:'Adelanto de octubre.', gatillo:'Gatillo: <b>Expectativa</b>.', cta:'—'},
         {type:'stories', tipoLabel:'Estado · 2pm', title:'Domingo de marca', product:'General', vo:null, guion:'Contenido ligero.', gatillo:'Sesgo: <b>Positividad</b>.', cta:'—'},
-        {type:'stories', tipoLabel:'Estado · 7pm', title:'Cierre de semana', product:'General', vo:null, guion:'Recordatorio horario lunes.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'} ],
+        {type:'stories', tipoLabel:'Estado · 5pm', title:'Cierre de semana', product:'General', vo:null, guion:'Recordatorio horario lunes.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'} ],
   28: [ // Lunes semana 5 (cierre de mes)
     {type:'reel', tipoLabel:'Reel', title:'"Lo que aprendimos este mes atendiendo pedidos mayoristas"', product:'ARENA PARA GATO AR-01 + COLLAR MP1808 + ARNÉS MP1720 + JUGUETE MP1037 — Ángulo semana 5: cierre de mes con los 4 protagonistas', img:184,
      vo:`"Este mes atendimos pedidos de veterinarias, petshops y tiendas de barrio en todo el país. La conclusión es simple: lo que más rota es lo que más piden — arena para gatos, collares, arneses y juguetes. Si tu negocio todavía no tiene estas líneas cubiertas, octubre es un buen momento para empezar."`,
      gatillo:'Driver: <b>Evidencia de uso</b> + Sesgo: <b>Validación social</b>.', cta:'"Arma tu pedido para octubre desde ya"'},
     {type:'stories', tipoLabel:'Estado · 8am', title:'Catálogo activo', product:'General', vo:null, guion:'Recordatorio catálogo.', gatillo:'Driver: <b>Primer paso sin fricción</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Producto ganador del mes', product:'COLLAR PARA MASCOTA · SKU MP1808', vo:null, guion:'Recordatorio del producto estrella del mes.', gatillo:'Sesgo: <b>Validación social</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 7pm', title:'Testimonio de cierre', product:'General', vo:null, guion:'Mensaje de cliente satisfecho del mes.', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Testimonio de cierre', product:'General', vo:null, guion:'Mensaje de cliente satisfecho del mes.', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
   ],
   29: [ {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: recordatorio general', product:'Mix collares/pecheras quietas', vo:null, guion:'Recopilación rápida de productos con descuento de rotación vigente todavía.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'—'},
         {type:'stories', tipoLabel:'Estado · 1pm', title:'Encuesta de cierre', product:'General', vo:null, guion:'"¿Qué quieres ver en octubre?"', gatillo:'Driver: <b>Reciprocidad anticipada</b>.', cta:'—'},
-        {type:'stories', tipoLabel:'Estado · 8pm', title:'Recordatorio horario', product:'General', vo:null, guion:'Horario de atención.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'} ],
+        {type:'stories', tipoLabel:'Estado · 5pm', title:'Recordatorio horario', product:'General', vo:null, guion:'Horario de atención.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'} ],
   30: [ // Miércoles - cierre de mes
     {type:'carousel', tipoLabel:'Carrusel', title:'"Resumen del mes: lo más vendido en Mister Pets"', product:'Top ganadores de septiembre',
      guion:'Slide 1: gancho de cierre de mes. Slides 2-4: ranking de los productos más pedidos con su margen. Slide 5: CTA para arrancar octubre con pedido.',
      gatillo:'Sesgo: <b>Efecto manada</b> + Driver: <b>Resultados medibles</b>.', cta:'"Arranca octubre con tu pedido listo"'},
     {type:'stories', tipoLabel:'Estado · 9am', title:'Cierre de mes', product:'General', vo:null, guion:'Recordatorio de cierre y agradecimiento a clientes.', gatillo:'Gatillo: <b>Reconocimiento social</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 3pm', title:'Teaser octubre', product:'General', vo:null, guion:'Adelanto de contenido del próximo mes.', gatillo:'Gatillo: <b>Expectativa</b>.', cta:'—'},
-    {type:'stories', tipoLabel:'Estado · 8pm', title:'Último recordatorio del mes', product:'General', vo:null, guion:'CTA final de pedidos del mes.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 5pm', title:'Último recordatorio del mes', product:'General', vo:null, guion:'CTA final de pedidos del mes.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
   ],
 };
 
