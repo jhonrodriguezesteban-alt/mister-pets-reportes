@@ -214,6 +214,7 @@
       <li>Los <b>productos quietos con SKU específico</b> (collares MP-539/538/537, pecheras MP-2350 a 53, cepillo MP0818) están repartidos en distintas semanas para forzar su rotación sin saturar un solo formato.</li>
       <li>Cada reel queda listo para <b>reciclarse como creativo de pauta</b> — el guion de voz en off ya está pensado para funcionar tanto en orgánico como en Meta Ads sin reeditar.</li>
       <li><b>Arena y arenero para gatos aparecen todas las semanas</b> en al menos una pieza de alto formato (reel, carrusel o TikTok) además de sus estados, cada vez con un ángulo distinto: semana 1 disponibilidad/stock, semana 2 urgencia del cliente final, semana 3 confiabilidad del proveedor, semana 4 humor sobre peso/logística, semana 5 cierre de mes. Es intencional — la arena es de recompra más frecuente que cualquier otro producto del catálogo, así que necesita presencia constante.</li>
+      <li><b>Enfoque por grupo de referencias, no por SKU único:</b> como somos mayoristas con ~470 referencias, cada pieza sobre collares o pecheras quietas muestra las 4 variantes del grupo (no una sola). La instrucción de edición es enfocar la imagen/video final en la referencia que menos haya rotado esa semana según lo que veas en el reporte de inventario. Así, en un mes completo, el diseño le da la vuelta real a todo el grupo — no solo repetimos la misma referencia cuatro veces.</li>
     </ul>
   </div>
 </div>
@@ -226,6 +227,12 @@
 <div class="section">
   <div class="section-title">📦 Producto quieto a mover este mes</div>
   <div class="card"><table id="tablaQuietos"></table></div>
+</div>
+
+<div class="section">
+  <div class="section-title">📣 Contenido inicial para la estrategia de pauta (Meta Ads)</div>
+  <p class="section-sub">Estas son las piezas de septiembre ya diseñadas pensando en poder subirse directo como creativo de Meta Ads (Facebook/Instagram), sin reeditar desde cero. Los TikToks no entran aquí porque son de alcance orgánico puro (F1), no llevan CTA directo.</p>
+  <div class="card"><table id="tablaPauta"></table></div>
 </div>
 
 <div class="section">
@@ -272,7 +279,7 @@ const CONTENT = {
     {type:'carousel', tipoLabel:'Carrusel', title:'"3 combos que rotan solos en tu vitrina"', product:'Collar + Correa + Pechera (Accesorios de Paseo)',
      guion:'Slide 1: gancho "Así arma su vitrina un negocio que sabe vender". Slides 2-4: cada combo con precio mayorista y margen de reventa sugerido. Slide 5: CTA de pedido mínimo.',
      gatillo:'Driver: <b>Descuento por volumen</b> + Sesgo: <b>Efecto de contraste</b>.', cta:'"Cotiza tu combo por WhatsApp"'},
-    {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Collar MP-539', product:'COLLAR PARA MASCOTAS · SKU MP-539 (stock 623, vendidas 73)', img:273, vo:null,
+    {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Collares (rotar el que más lo necesite)', product:'GRUPO COLLARES QUIETOS · SKU MP-539 / MP-538 / MP-537 / MP539-1 (mostrar las 4 referencias, edición enfocada en la de menor rotación esa semana)', img:273, vo:null,
      guion:'Foto del collar con precio especial de rotación.', gatillo:'Sesgo: <b>Efecto señuelo</b>.', cta:'"Pregunta por el precio de rotación"'},
     {type:'stories', tipoLabel:'Estado · 1pm', title:'Encuesta rápida', product:'General', vo:null, guion:'Sticker de encuesta sobre qué categoría de producto necesitan más este mes.', gatillo:'Sesgo: <b>Efecto de exposición repetida</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 8pm', title:'Testimonio de cliente', product:'General', vo:null, guion:'Captura de mensaje de cliente satisfecho (con permiso).', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
@@ -281,7 +288,7 @@ const CONTENT = {
     {type:'reel', tipoLabel:'Reel', title:'"Cuánto le sale en realidad no comprar por mayor"', product:'PECHERA PARA MASCOTA · SKU MP1735 (ejemplo de comparación de precios)', img:246,
      vo:`"Si todavía le estás comprando a un intermediario que compra por mayor y te revende, estás perdiendo margen todos los meses. Te muestro la diferencia real con esta pechera: precio al detal versus precio comprando por volumen directo con nosotros — la diferencia se ve en pesos, no en promesas."`,
      gatillo:'Driver: <b>Comparación de costos</b> + Sesgo: <b>Efecto de anclaje</b>.', cta:'"Haz cuentas con nosotros — pide tu cotización mayorista"'},
-    {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Pechera MP-2352', product:'PECHERA PARA MASCOTA · SKU MP-2352 (stock 372, vendidas 111)', vo:null,
+    {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Pecheras (rotar la que más lo necesite)', product:'GRUPO PECHERAS QUIETAS · SKU MP-2350 / MP-2351 / MP-2352 / MP-2353 (mostrar las 4 tallas, edición enfocada en la de menor rotación esa semana)', vo:null,
      guion:'Foto real del producto con tallas disponibles.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'"Dinos la talla que necesitas"'},
     {type:'stories', tipoLabel:'Estado · 3pm', title:'Detrás de cámara: empaque', product:'General', vo:null, guion:'Time-lapse armando pedidos del día.', gatillo:'Driver: <b>Evidencia de uso</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 8pm', title:'Recordatorio stock limitado', product:'Collar ganador MP1808', vo:null, guion:'Contador de unidades restantes.', gatillo:'Gatillo: <b>FOMO</b>.', cta:'"Últimas unidades a este precio"'},
@@ -314,7 +321,7 @@ const CONTENT = {
     {type:'stories', tipoLabel:'Estado · 7pm', title:'Testimonio', product:'General', vo:null, guion:'Mensaje de cliente satisfecho.', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
   ],
   8: [ // Martes
-    {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Collar MP-538', product:'COLLAR PARA MASCOTAS · SKU MP-538 (stock 676, vendidas 78)', img:273, vo:null, guion:'Foto del collar con precio.', gatillo:'Sesgo: <b>Efecto señuelo</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Collares (semana 2)', product:'GRUPO COLLARES QUIETOS · SKU MP-539 / MP-538 / MP-537 / MP539-1 (segunda pasada — priorizar en edición el que quedó con menos avance en la semana 1)', img:273, vo:null, guion:'Foto de las 4 referencias juntas con precio destacado.', gatillo:'Sesgo: <b>Efecto señuelo</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 1pm', title:'Pregunta a la audiencia', product:'General', vo:null, guion:'"¿Qué categoría quieres ver en oferta?"', gatillo:'Driver: <b>Reciprocidad anticipada</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 8pm', title:'Recordatorio horario', product:'General', vo:null, guion:'Horario de atención.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
   ],
@@ -322,7 +329,7 @@ const CONTENT = {
     {type:'carousel', tipoLabel:'Carrusel', title:'"5 productos que todo petshop debería tener en mostrador"', product:'Mix: Collar + Arnés + Juguete + Comedero + Arenero',
      guion:'Cada slide muestra un producto ganador con su margen de reventa estimado. Slide final: "¿Con cuál empezamos tu pedido?"',
      gatillo:'Gatillo: <b>Autoridad</b> + Driver: <b>Resultados medibles</b>.', cta:'"Cotiza tu pedido mixto"'},
-    {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Pechera MP-2351', product:'PECHERA PARA MASCOTA · SKU MP-2351 (stock 398, vendidas 86)', vo:null, guion:'Foto real con tallas.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Pecheras (semana 2)', product:'GRUPO PECHERAS QUIETAS · SKU MP-2350 / MP-2351 / MP-2352 / MP-2353 (segunda pasada — priorizar en edición la talla con menos avance)', vo:null, guion:'Foto real con las 4 tallas.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 3pm', title:'Repost del reel del lunes', product:'Reciclado', vo:null, guion:'Mejor clip del reel del lunes en formato story.', gatillo:'Driver: <b>Resultados medibles</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 8pm', title:'Behind the scenes', product:'General', vo:null, guion:'Empaque de pedidos.', gatillo:'Driver: <b>Entrega express</b>.', cta:'—'},
   ],
@@ -356,14 +363,14 @@ const CONTENT = {
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Producto ganador: Arnés', product:'ARNES PARA MASCOTA · SKU MP1720', img:242, vo:null, guion:'Demo de ajuste correcto.', gatillo:'Heurística de disponibilidad.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 7pm', title:'Testimonio', product:'General', vo:null, guion:'Mensaje de cliente.', gatillo:'Gatillo: <b>Testimonio poderoso</b>.', cta:'—'},
   ],
-  15: [ {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Collar MP-537', product:'COLLAR PARA MASCOTAS · SKU MP-537 (stock 686, vendidas 75)', img:273, vo:null, guion:'Foto con precio.', gatillo:'Sesgo: <b>Efecto señuelo</b>.', cta:'—'},
+  15: [ {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Collares (semana 3)', product:'GRUPO COLLARES QUIETOS · SKU MP-539 / MP-538 / MP-537 / MP539-1 (tercera pasada — cerrar rotación de las que sigan quietas)', img:273, vo:null, guion:'Foto con precio, cierre de mes para este grupo.', gatillo:'Sesgo: <b>Efecto señuelo</b>.', cta:'—'},
         {type:'stories', tipoLabel:'Estado · 1pm', title:'Pregunta a la audiencia', product:'General', vo:null, guion:'Encuesta de categoría preferida.', gatillo:'Driver: <b>Reciprocidad anticipada</b>.', cta:'—'},
         {type:'stories', tipoLabel:'Estado · 8pm', title:'Recordatorio horario', product:'General', vo:null, guion:'Horario de atención.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'} ],
   16: [ // Miércoles
     {type:'carousel', tipoLabel:'Carrusel', title:'"Antes y después: lo que pasa cuando compras por volumen"', product:'PECHERA MP1735 + COLLAR MP1808 + ARENA PARA GATO AR-01 (ejemplos reales de margen)', img:246,
      guion:'Slide 1: gancho con cifra de margen perdido comprando al detal. Slides 2-4: ejemplos con pechera, collar y arena a precio mayorista vs. detal. Slide 5: CTA de cotización.',
      gatillo:'Sesgo: <b>Efecto de anclaje</b> + Driver: <b>Comparación de costos</b>.', cta:'"Cotiza tu pedido mayorista"'},
-    {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Pechera MP-2350', product:'PECHERA PARA MASCOTA · SKU MP-2350 (stock 399, vendidas 84)', vo:null, guion:'Foto con tallas.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Pecheras (semana 3)', product:'GRUPO PECHERAS QUIETAS · SKU MP-2350 / MP-2351 / MP-2352 / MP-2353 (tercera pasada — cerrar rotación de las que sigan quietas)', vo:null, guion:'Foto con tallas, cierre de mes para este grupo.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 3pm', title:'Repost del reel', product:'Reciclado', vo:null, guion:'Clip del reel del lunes.', gatillo:'Driver: <b>Resultados medibles</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 8pm', title:'Behind the scenes', product:'General', vo:null, guion:'Empaque de pedidos.', gatillo:'Driver: <b>Entrega express</b>.', cta:'—'},
   ],
@@ -379,7 +386,7 @@ const CONTENT = {
     {type:'tiktok', tipoLabel:'TikTok · Entretenimiento', title:'"Un día en la vida de un pedido mayorista"', product:'Mix del día: ARENA PARA GATO + COLLARES + JUGUETES (lo que más se despacha)', img:5,
      guion:'Formato day-in-the-life mostrando de forma ágil y con humor cómo se arma y despacha un pedido, protagonizado por bultos de arena para gatos como parte central del despacho. Sin venta dura.',
      gatillo:'Driver: <b>Evidencia de uso</b> + Gatillo: <b>Empatía genuina</b>.', cta:'Comentario fijado con catálogo'},
-    {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Collar MP539-1', product:'COLLAR PARA MASCOTAS · SKU MP539-1 (stock 504, vendidas 45)', img:274, vo:null, guion:'Foto con precio especial.', gatillo:'Sesgo: <b>Efecto señuelo</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Collares (revisión final)', product:'GRUPO COLLARES QUIETOS · SKU MP-539 / MP-538 / MP-537 / MP539-1 (revisión final del mes — verificar cuál quedó realmente sin rotar)', img:274, vo:null, guion:'Foto con precio especial de cierre.', gatillo:'Sesgo: <b>Efecto señuelo</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Resumen semanal', product:'General', vo:null, guion:'Top 3 de la semana.', gatillo:'Sesgo: <b>Efecto manada</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 7pm', title:'Oferta de fin de semana', product:'Combo quietos', vo:null, guion:'Descuento fin de semana.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
   ],
@@ -420,7 +427,7 @@ const CONTENT = {
     {type:'tiktok', tipoLabel:'TikTok · Entretenimiento', title:'"Cosas que solo entiende quien vende arena para gatos"', product:'ARENA PARA GATO · SKU AR-01 + ARENERO · SKU MP1280A — Ángulo semana 4: humor sobre el peso/volumen del producto', img:5,
      guion:'Formato relatable/humor sobre lo pesada y voluminosa que es la arena para cargar y almacenar, y el alivio de tener un proveedor que la entrega directo en la tienda sin que el tendero tenga que cargarla desde lejos. Sin venta dura.',
      gatillo:'Gatillo: <b>Identidad y pertenencia</b>.', cta:'Comentario fijado con catálogo'},
-    {type:'stories', tipoLabel:'Estado · 9am', title:'Producto quieto: Pechera MP-2353', product:'PECHERA PARA MASCOTA · SKU MP-2353', vo:null, guion:'Foto con tallas.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
+    {type:'stories', tipoLabel:'Estado · 9am', title:'Grupo quieto: Pecheras (revisión final)', product:'GRUPO PECHERAS QUIETAS · SKU MP-2350 / MP-2351 / MP-2352 / MP-2353 (revisión final del mes — verificar cuál quedó realmente sin rotar)', vo:null, guion:'Foto con tallas, cierre de mes para este grupo.', gatillo:'Driver: <b>Simplicidad del proceso</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 2pm', title:'Resumen semanal', product:'General', vo:null, guion:'Top 3 más pedidos.', gatillo:'Sesgo: <b>Efecto manada</b>.', cta:'—'},
     {type:'stories', tipoLabel:'Estado · 7pm', title:'Oferta de fin de semana', product:'Combo quietos', vo:null, guion:'Descuento fin de semana.', gatillo:'Driver: <b>Oferta por tiempo limitado</b>.', cta:'—'},
   ],
@@ -575,6 +582,15 @@ MONTH_DAYS.forEach(day=>{
     else if(p.type==='stories') storiesByWeek[weekOfDay(day)].push(item);
   });
 });
+
+// Tabla de contenido para pauta (Reels + Carruseles, ordenados por día)
+let hPauta = `<tr><th>Día</th><th>Tipo</th><th>Pieza</th></tr>`;
+[...reelsList, ...carouselsList].sort((a,b)=>a.day-b.day).forEach(it=>{
+  const isReel = reelsList.includes(it);
+  hPauta += `<tr><td>${it.day} sep</td><td><span class="pill ${isReel?'green':'red'}">${isReel?'Reel':'Carrusel'}</span></td><td>${it.title}</td></tr>`;
+});
+document.getElementById('tablaPauta').innerHTML = hPauta;
+
 
 function thumbHtml(it){
   const src = it.img && IMAGES_B64[it.img] ? `data:image/jpeg;base64,${IMAGES_B64[it.img]}` : null;
