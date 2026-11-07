@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Paleta Mister Pets (tomada del logo) */
+:root {
+  --vino: #490807;
+  --vino-700: #6a1a14;
+  --durazno: #f7ae77;
+  --durazno-200: #fbd3b3;
+  --arena: #edc3a6;
+  --crema: #fbf5ef;
+  --cacao: #6b3a2c;
+  --blanco: #fffdfb;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@theme inline {
+  --color-vino: var(--vino);
+  --color-vino-700: var(--vino-700);
+  --color-durazno: var(--durazno);
+  --color-durazno-200: var(--durazno-200);
+  --color-arena: var(--arena);
+  --color-crema: var(--crema);
+  --color-cacao: var(--cacao);
+  --color-blanco: var(--blanco);
+  --font-display: var(--font-bricolage);
+  --font-sans: var(--font-figtree);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--crema);
+  color: var(--vino);
+  font-family: var(--font-figtree), ui-sans-serif, sans-serif;
+}
+
+::selection {
+  background: var(--durazno);
+  color: var(--vino);
+}
+
+.btn {
+  transition: transform 140ms var(--ease-out), background-color 160ms var(--ease-out), color 160ms var(--ease-out);
+}
+.btn:active {
+  transform: scale(0.97);
+}
+
+.reveal {
+  animation: reveal 700ms var(--ease-out) both;
+}
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .chev { transform: rotate(180deg); }
+.chev { transition: transform 200ms var(--ease-out); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { animation: none; }
+  html { scroll-behavior: auto; }
+}

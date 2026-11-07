@@ -28,3 +28,25 @@ _Pendiente._
 
 ## Ronda 4 — Técnico
 _Pendiente._
+
+## Datos confirmados por Mister Pets
+- Todo opera desde **Bogotá** (bodega y despachos).
+- **Pedido mínimo: $300.000.**
+- Referente visual: https://calabazapets.com/ (banner grande redondeado, categorías con íconos, bloques con fotos de animales, footer oscuro con columnas).
+- La página es **informativa para clientes mayoristas**; la venta se cierra por WhatsApp.
+
+## Pendiente por confirmar (está provisional en `src/content.ts`)
+- [ ] Dirección exacta en Bogotá y horario de atención.
+- [ ] Nombres reales de las líneas de producto (según el catálogo).
+- [ ] Testimonios reales de clientes (hoy son de ejemplo).
+- [ ] Logo oficial en buena calidad (PNG o SVG); hoy se usa un logo provisional en texto.
+- [ ] Fotos reales de bodega y producto; hoy son fotos de Unsplash de ejemplo en `public/images/`.
+- [ ] Respuesta a "¿Venden al detal?" y tiempos/costos de envío.
+
+## Cómo verla en tu computador
+```bash
+cd web
+npm install
+npm run dev
+```
+Luego abre http://localhost:3000. Los textos se cambian en `src/content.ts`.
