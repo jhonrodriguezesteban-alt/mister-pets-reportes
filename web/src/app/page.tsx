@@ -87,8 +87,8 @@ export default function Home() {
                 <BadgeCheck aria-hidden className="size-4" />
                 Importador mayorista · Bogotá
               </p>
-              <h1 className="mt-6 font-display text-[2.6rem] leading-[0.95] font-extrabold tracking-tight text-balance sm:text-6xl lg:text-7xl">
-                Surte tu pet shop directo del importador.
+              <h1 className="mt-6 font-display text-[2.4rem] leading-[0.98] font-extrabold tracking-tight text-balance sm:text-6xl lg:text-[4.1rem]">
+                Surte tu pet shop con el mejor importador de productos pet de Colombia.
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-vino/90 sm:text-xl">
                 Más de 400 referencias en juguetes, arena, comederos y accesorios para perros y gatos. Despachamos a toda Colombia.

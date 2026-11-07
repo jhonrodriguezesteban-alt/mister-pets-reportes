@@ -64,6 +64,7 @@ export function Header() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-controls="menu-movil"
+              data-menu-toggle
               aria-label={open ? "Cerrar menú" : "Abrir menú"}
               className="btn grid size-11 cursor-pointer place-items-center rounded-full border border-vino/20 lg:hidden"
             >
@@ -72,8 +73,7 @@ export function Header() {
           </div>
         </div>
 
-        {open && (
-          <nav id="menu-movil" aria-label="Menú móvil" className="border-t border-arena/70 lg:hidden">
+        <nav id="menu-movil" aria-label="Menú móvil" hidden={!open} className="border-t border-arena/70 lg:hidden">
             <ul className="mx-auto flex max-w-7xl flex-col px-4 py-2">
               {nav.map((item) => (
                 <li key={item.href}>
@@ -98,8 +98,7 @@ export function Header() {
                 </a>
               </li>
             </ul>
-          </nav>
-        )}
+        </nav>
       </div>
     </header>
   );
