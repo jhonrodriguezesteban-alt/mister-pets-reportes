@@ -39,7 +39,7 @@ _Pendiente._
 - [ ] Dirección exacta en Bogotá y horario de atención.
 - [ ] Nombres reales de las líneas de producto (según el catálogo).
 - [ ] Testimonios reales de clientes (hoy son de ejemplo).
-- [ ] Logo oficial en buena calidad (PNG o SVG); hoy se usa un logo provisional en texto.
+- [ ] Logo oficial en alta calidad (PNG o SVG); hoy se usa la foto de perfil de Instagram (150 px) en `public/images/logo-mister-pets.png`.
 - [ ] Fotos reales de bodega y producto; hoy son fotos de Unsplash de ejemplo en `public/images/`.
 - [ ] Respuesta a "¿Venden al detal?" y tiempos/costos de envío.
 

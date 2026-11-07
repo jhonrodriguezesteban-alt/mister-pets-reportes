@@ -1,15 +1,17 @@
-import { PawPrint } from "lucide-react";
+import Image from "next/image";
 
-// Logo provisional en texto. Reemplazar por el logo oficial en buena calidad (PNG/SVG).
+// Logo tomado de la foto de perfil de Instagram (150 px). Reemplazar por el archivo
+// original en alta calidad cuando esté disponible (mismo nombre en public/images/).
 export function Logo({ light = false }: { light?: boolean }) {
   return (
     <span className="flex items-center gap-2.5">
-      <span
-        aria-hidden
-        className="grid size-10 place-items-center rounded-full bg-durazno text-vino ring-2 ring-vino/10"
-      >
-        <PawPrint className="size-5" />
-      </span>
+      <Image
+        src="/images/logo-mister-pets.png"
+        alt=""
+        width={48}
+        height={48}
+        className="size-12 shrink-0 rounded-full bg-blanco"
+      />
       <span className="leading-none">
         <span
           className={`block font-display text-xl font-extrabold tracking-tight ${light ? "text-crema" : "text-vino"}`}
