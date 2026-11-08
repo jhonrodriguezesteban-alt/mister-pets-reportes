@@ -15,6 +15,9 @@ const figtree = Figtree({
 });
 
 export const metadata: Metadata = {
+  // Dirección pública del sitio: se usa para armar los enlaces de la imagen de vista previa.
+  // Cambiar cuando se conecte el dominio propio.
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://misterpets.vercel.app"),
   title: "Mister Pets | Mayorista de productos para mascotas en Colombia",
   description:
     "Importador mayorista de productos para mascotas en Bogotá. Más de 400 referencias para pet shops, veterinarias y locales de mascotas, con envíos a toda Colombia. Pedido mínimo $300.000.",
@@ -24,7 +27,13 @@ export const metadata: Metadata = {
       "Más de 400 referencias para tu negocio de mascotas. Envíos a toda Colombia desde Bogotá.",
     locale: "es_CO",
     type: "website",
-    images: ["/images/hero-perro.jpg"],
+    siteName: "Mister Pets",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mister Pets | Mayorista Pet Shop Colombia",
+    description: "Más de 400 referencias para tu negocio de mascotas. Envíos a toda Colombia desde Bogotá.",
   },
 };
 
