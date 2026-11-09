@@ -26,16 +26,44 @@ export const stats = [
   { value: "Bogotá", label: "bodega y despachos" },
 ];
 
-// POR CONFIRMAR con el catálogo: nombres de las líneas de producto.
+// Líneas tomadas del índice del Catálogo Mayorista 2026. Fotos reales del catálogo (Canva).
 export const categorias = [
-  { icon: "Bone", title: "Juguetes", text: "Peluches, mordederas, pelotas y cuerdas que se venden solos en el mostrador." },
-  { icon: "Cat", title: "Arena para gatos", text: "Aglomerante y con aroma. Una de las referencias que más rota." },
-  { icon: "Utensils", title: "Comederos y bebederos", text: "Platos, dispensadores y fuentes en varios tamaños y colores." },
-  { icon: "BedDouble", title: "Camas y descanso", text: "Camas, cojines y cobijas para perros y gatos." },
-  { icon: "Link2", title: "Collares, traíllas y arneses", text: "Para paseo diario, entrenamiento y tallas grandes." },
-  { icon: "Scissors", title: "Aseo y peluquería", text: "Cepillos, cortaúñas, bolsas y palas para el día a día." },
-  { icon: "Shirt", title: "Ropa y accesorios", text: "Prendas y detalles que suben el ticket de cada venta." },
-  { icon: "Rabbit", title: "Pequeñas especies", text: "Accesorios para hámsters, conejos y otras mascotas pequeñas." },
+  {
+    title: "Juguetes",
+    items: ["Pelotas", "Mordedores", "Peluches", "Juguetes para gatos", "Interactivos", "Catnip y rascadores"],
+    image: "/images/productos/juguetes.jpg",
+    alt: "Cachorro golden mordiendo una pelota roja de caucho",
+  },
+  {
+    title: "Alimentación",
+    items: ["Comederos", "Comederos antirreflujo", "Bebederos portátiles", "Dispensadores", "Fuentes y filtros"],
+    image: "/images/productos/alimentacion.jpg",
+    alt: "Perro french poodle comiendo de un comedero doble elevado",
+  },
+  {
+    title: "Higiene y cuidado",
+    items: ["Areneros tapados y abiertos", "Tapetes y pañales", "Cepillos y quita pelos", "Corta uñas", "Máquinas para peluquear"],
+    image: "/images/productos/higiene.jpg",
+    alt: "Gato recibiendo un cepillado con cepillo autolimpiable",
+  },
+  {
+    title: "Ropa y accesorios",
+    items: ["Pecheras y arneses", "Collares y traíllas", "Ropa por tallas", "Accesorios decorativos"],
+    image: "/images/productos/accesorios.jpg",
+    alt: "Perro pastor australiano con pechera fucsia en el campo",
+  },
+  {
+    title: "Transporte",
+    items: ["Maletas", "Mochilas tipo cápsula", "Guacales", "Coches"],
+    image: "/images/productos/transporte.jpg",
+    alt: "Gato asomándose a una maleta de transporte azul",
+  },
+  {
+    title: "Hábitat",
+    items: ["Corrales plegables", "Jaulas", "Ruedas y accesorios para hámster"],
+    image: "/images/productos/habitat.jpg",
+    alt: "Corral octagonal plegable para mascotas",
+  },
 ] as const;
 
 export const clientes = [
