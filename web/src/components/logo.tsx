@@ -1,16 +1,16 @@
 import Image from "next/image";
 
-// Logo tomado de la foto de perfil de Instagram (150 px). Reemplazar por el archivo
-// original en alta calidad cuando esté disponible (mismo nombre en public/images/).
+// Logo oficial de Mister Pets (fondo transparente). Original en brand/logo-mister-pets-original.png.
 export function Logo({ light = false }: { light?: boolean }) {
   return (
     <span className="flex items-center gap-2.5">
       <Image
         src="/images/logo-mister-pets.png"
         alt=""
-        width={48}
-        height={48}
-        className="size-12 shrink-0 rounded-full bg-blanco"
+        width={454}
+        height={480}
+        priority
+        className={`h-14 w-auto shrink-0 ${light ? "box-content rounded-2xl bg-crema p-1.5" : ""}`}
       />
       <span className="leading-none">
         <span

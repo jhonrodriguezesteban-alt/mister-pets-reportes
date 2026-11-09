@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X, MessageCircle, Truck } from "lucide-react";
-import { CATALOG_MESSAGE, PEDIDO_MINIMO, whatsappLink } from "@/content";
+import { CATALOG_MESSAGE, PEDIDO_MINIMO_TEXTO, whatsappLink } from "@/content";
 import { Logo } from "./logo";
 
 const nav = [
@@ -22,7 +22,7 @@ export function Header() {
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-2 sm:justify-between">
           <p className="flex items-center gap-2">
             <Truck aria-hidden className="size-4 shrink-0" />
-            Envíos a toda Colombia · Pedido mínimo {PEDIDO_MINIMO}
+            Envíos a toda Colombia · Pedido mínimo {PEDIDO_MINIMO_TEXTO}
           </p>
           <p className="hidden sm:block">Venta exclusiva para negocios</p>
         </div>
