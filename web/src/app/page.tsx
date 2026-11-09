@@ -2,24 +2,16 @@ import Image from "next/image";
 import {
   ArrowRight,
   BadgeCheck,
-  BedDouble,
-  Bone,
-  Cat,
   ChevronDown,
   Clock,
-  Link2,
   MapPin,
   MessageCircle,
   Phone,
   Quote,
-  Rabbit,
-  Scissors,
-  Shirt,
-  Utensils,
-  type LucideIcon,
 } from "lucide-react";
 import { Header } from "@/components/header";
 import { Logo } from "@/components/logo";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
 import {
   CATALOG_MESSAGE,
   DIRECCION,
@@ -36,17 +28,6 @@ import {
   testimonios,
   whatsappLink,
 } from "@/content";
-
-const icons: Record<string, LucideIcon> = {
-  Bone,
-  Cat,
-  Utensils,
-  BedDouble,
-  Link2,
-  Scissors,
-  Shirt,
-  Rabbit,
-};
 
 const catalogHref = whatsappLink(CATALOG_MESSAGE);
 
@@ -145,32 +126,47 @@ export default function Home() {
                 </h2>
               </div>
               <p className="max-w-lg text-lg text-cacao lg:justify-self-end">
-                Todo en un mismo pedido, así haces una sola compra y un solo envío. Pídenos el catálogo para ver referencias y precios.
+                Las mismas seis líneas de nuestro catálogo mayorista. Combina referencias de todas en un solo pedido y un solo envío.
               </p>
             </div>
 
-            <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {categorias.map((c, i) => {
-                const Icon = icons[c.icon];
-                const highlight = i === 0 || i === 1;
-                return (
-                  <li
-                    key={c.title}
-                    className={`group rounded-3xl p-6 transition-colors duration-200 ${
-                      highlight ? "bg-vino text-crema" : "bg-blanco ring-1 ring-arena hover:bg-durazno-200/60"
-                    }`}
-                  >
-                    <span
-                      className={`grid size-14 place-items-center rounded-2xl ${highlight ? "bg-durazno text-vino" : "bg-durazno-200"}`}
-                    >
-                      <Icon aria-hidden className="size-7" strokeWidth={1.75} />
-                    </span>
-                    <h3 className="mt-5 font-display text-xl font-bold">{c.title}</h3>
-                    <p className={`mt-2 text-[15px] leading-relaxed ${highlight ? "text-crema/85" : "text-cacao"}`}>{c.text}</p>
-                  </li>
-                );
-              })}
+            <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {categorias.map((c) => (
+                <li key={c.title} className="group flex flex-col overflow-hidden rounded-[1.75rem] bg-blanco ring-1 ring-arena">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-crema">
+                    <Image
+                      src={c.image}
+                      alt={c.alt}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="font-display text-2xl font-extrabold">{c.title}</h3>
+                    <ul className="mt-3 flex flex-wrap gap-2">
+                      {c.items.map((item) => (
+                        <li key={item} className="rounded-full bg-durazno-200/70 px-3 py-1 text-sm font-medium">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              ))}
             </ul>
+            <div className="mt-8 flex flex-col items-start gap-3 rounded-[1.75rem] bg-vino p-6 text-crema sm:flex-row sm:items-center sm:justify-between sm:p-8">
+              <p className="font-display text-xl font-bold sm:text-2xl">Más de 400 referencias con fotos, medidas y precios en el catálogo mayorista.</p>
+              <a
+                href={catalogHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn inline-flex shrink-0 items-center gap-2 rounded-full bg-durazno px-6 py-3.5 font-bold text-vino hover:bg-durazno-200"
+              >
+                <MessageCircle aria-hidden className="size-5" />
+                Pedir catálogo
+              </a>
+            </div>
           </div>
         </section>
 
@@ -264,11 +260,11 @@ export default function Home() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
             <div className="grid grid-cols-2 gap-4">
               <div className="relative aspect-[3/4] overflow-hidden rounded-[1.75rem]">
-                <Image src="/images/gatito.jpg" alt="Gatito jugando sobre un sofá" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
+                <Image src="/images/productos/pechera-gato.jpg" alt="Gato blanco con pechera tejida azul y traílla, del catálogo Mister Pets" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
               </div>
               <div className="grid gap-4">
                 <div className="relative aspect-square overflow-hidden rounded-[1.75rem]">
-                  <Image src="/images/dos-perros.jpg" alt="Dos perros pequeños corriendo por un camino" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
+                  <Image src="/images/productos/peluches.jpg" alt="Peluches de pollito para mascotas, del catálogo Mister Pets" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
                 </div>
                 <div className="rounded-[1.75rem] bg-durazno p-5 text-vino">
                   <p className="font-display text-4xl font-extrabold">Bogotá</p>
@@ -372,7 +368,7 @@ export default function Home() {
           <div>
             <h2 className="font-display text-lg font-bold text-durazno">Productos</h2>
             <ul className="mt-4 space-y-2 text-crema/85">
-              {categorias.slice(0, 5).map((c) => (
+              {categorias.map((c) => (
                 <li key={c.title}>
                   <a href="#productos" className="hover:underline">{c.title}</a>
                 </li>
@@ -425,6 +421,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      <WhatsAppFloat href={catalogHref} />
     </>
   );
 }

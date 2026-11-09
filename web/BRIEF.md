@@ -37,7 +37,7 @@ _Pendiente._
 
 ## Pendiente por confirmar (está provisional en `src/content.ts`)
 - [ ] Dirección exacta en Bogotá y horario de atención.
-- [ ] Nombres reales de las líneas de producto (según el catálogo).
+- [x] Líneas de producto según el índice del Catálogo Mayorista 2026 (Canva), con fotos reales del catálogo en `public/images/productos/`.
 - [ ] Testimonios reales de clientes (hoy son de ejemplo).
 - [ ] Logo oficial en alta calidad (PNG o SVG); hoy se usa la foto de perfil de Instagram (150 px) en `public/images/logo-mister-pets.png`.
 - [ ] Fotos reales de bodega y producto; hoy son fotos de Unsplash de ejemplo en `public/images/`.
