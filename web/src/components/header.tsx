@@ -18,7 +18,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40">
+    <header className="site-header sticky top-0 z-40">
       <div className="bg-vino text-crema text-xs sm:text-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-2 sm:justify-between">
           <p className="flex items-center gap-2">

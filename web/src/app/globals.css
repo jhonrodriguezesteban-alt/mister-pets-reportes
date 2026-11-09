@@ -65,3 +65,77 @@ details[open] .chev { transform: rotate(180deg); }
   .reveal { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- Movimiento al hacer scroll ---------- */
+
+/* Aparición al entrar en pantalla (lo activa components/scroll-reveal.tsx).
+   Sin JavaScript todo se ve normal. */
+.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.js-reveal [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Franja con movimiento continuo */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+.marquee-wrap:hover .marquee { animation-play-state: paused; }
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* Efectos ligados al scroll (navegadores modernos; en los demás no pasa nada) */
+@supports (animation-timeline: scroll()) {
+  .hero-img {
+    animation: hero-drift linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 90vh;
+  }
+  @keyframes hero-drift {
+    to { transform: translateY(8%) scale(1.06); }
+  }
+
+  .site-header {
+    animation: header-lift linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 140px;
+  }
+  @keyframes header-lift {
+    to { box-shadow: 0 10px 30px -18px rgb(73 8 7 / 0.45); }
+  }
+
+  .steps-line {
+    transform-origin: left;
+    animation: line-fill linear both;
+    animation-timeline: view();
+    animation-range: entry 40% cover 55%;
+  }
+  @keyframes line-fill {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .img-parallax {
+    animation: img-parallax linear both;
+    animation-timeline: view();
+  }
+  @keyframes img-parallax {
+    from { transform: scale(1.12) translateY(-4%); }
+    to { transform: scale(1.12) translateY(4%); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .marquee, .hero-img, .site-header, .steps-line, .img-parallax { animation: none; }
+}
