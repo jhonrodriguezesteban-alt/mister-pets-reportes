@@ -11,6 +11,7 @@ const nav = [
   { href: "#como-comprar", label: "Cómo comprar" },
   { href: "#nosotros", label: "Nosotros" },
   { href: "#preguntas", label: "Preguntas" },
+  { href: "#visitanos", label: "Visítanos" },
 ];
 
 export function Header() {

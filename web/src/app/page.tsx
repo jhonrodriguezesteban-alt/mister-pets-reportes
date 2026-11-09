@@ -16,6 +16,8 @@ import {
   CATALOG_MESSAGE,
   DIRECCION,
   HORARIO,
+  MAPS_URL,
+  VISITA_MESSAGE,
   INSTAGRAM_URL,
   PEDIDO_MINIMO_TEXTO,
   WHATSAPP_DISPLAY,
@@ -333,6 +335,57 @@ export default function Home() {
           </div>
         </section>
 
+        {/* VISITA */}
+        <section id="visitanos" aria-labelledby="visita-titulo" className="scroll-mt-32 px-4 pb-14 sm:pb-20">
+          <div className="mx-auto grid max-w-7xl gap-6 rounded-[2rem] bg-vino p-6 text-crema sm:p-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <p className="font-bold text-durazno">Somos bodega mayorista</p>
+              <h2 id="visita-titulo" className="mt-2 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+                Visítanos en Bogotá.
+              </h2>
+              <p className="mt-4 max-w-lg text-lg text-crema/85">
+                Agenda tu cita y te mostramos el surtido en persona. Te atendemos con gusto.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={whatsappLink(VISITA_MESSAGE)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn inline-flex items-center justify-center gap-2 rounded-full bg-durazno px-6 py-3.5 font-bold text-vino hover:bg-durazno-200"
+                >
+                  <MessageCircle aria-hidden className="size-5" />
+                  Agendar cita
+                </a>
+                <a
+                  href={MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-bold ring-2 ring-crema/60 ring-inset hover:bg-crema/10"
+                >
+                  <MapPin aria-hidden className="size-5" />
+                  Ver en Google Maps
+                </a>
+              </div>
+            </div>
+            <dl className="grid gap-4">
+              <div className="rounded-3xl bg-crema/10 p-5">
+                <dt className="flex items-center gap-2 text-sm font-semibold text-durazno">
+                  <MapPin aria-hidden className="size-4" /> Dirección
+                </dt>
+                <dd className="mt-1 text-lg font-semibold">Calle 10 #20-35, Bodega 317</dd>
+                <dd className="text-crema/80">Centro Comercial Puerto Príncipe · Bogotá</dd>
+              </div>
+              <div className="rounded-3xl bg-crema/10 p-5">
+                <dt className="flex items-center gap-2 text-sm font-semibold text-durazno">
+                  <Clock aria-hidden className="size-4" /> Horario (con cita)
+                </dt>
+                <dd className="mt-1 text-lg font-semibold">Lunes a viernes · 9:00 a.m. – 5:00 p.m.</dd>
+                <dd className="text-lg font-semibold">Sábados · 9:00 a.m. – 2:00 p.m.</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
         {/* CTA FINAL */}
         <section className="px-4 pb-16">
           <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] bg-durazno md:grid-cols-[1.3fr_0.7fr]">
@@ -394,7 +447,9 @@ export default function Home() {
               </li>
               <li className="flex gap-3">
                 <MapPin aria-hidden className="mt-0.5 size-5 shrink-0" />
-                {DIRECCION}
+                <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  {DIRECCION}
+                </a>
               </li>
               <li className="flex gap-3">
                 <Clock aria-hidden className="mt-0.5 size-5 shrink-0" />
