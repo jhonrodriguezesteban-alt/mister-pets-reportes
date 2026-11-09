@@ -17,7 +17,7 @@ import {
   DIRECCION,
   HORARIO,
   INSTAGRAM_URL,
-  PEDIDO_MINIMO,
+  PEDIDO_MINIMO_TEXTO,
   WHATSAPP_DISPLAY,
   categorias,
   clientes,
@@ -84,16 +84,16 @@ export default function Home() {
                   <ArrowRight aria-hidden className="size-4" />
                 </a>
               </div>
-              <p className="mt-6 text-sm font-semibold">Pedido mínimo {PEDIDO_MINIMO} · Solo para negocios</p>
+              <p className="mt-6 text-sm font-semibold">Pedido mínimo {PEDIDO_MINIMO_TEXTO} · Solo para negocios</p>
             </div>
             <div className="relative min-h-[340px] lg:min-h-full">
               <Image
-                src="/images/hero-perro.jpg"
-                alt="Cachorro corgi sentado sobre un fondo naranja"
+                src="/images/hero-cachorro-pelota.jpg"
+                alt="Cachorro golden mordiendo una pelota de caucho del catálogo Mister Pets"
                 fill
                 priority
                 sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover object-[50%_35%]"
+                className="object-cover object-[45%_40%]"
               />
               <div className="absolute bottom-5 left-5 rounded-2xl bg-crema px-4 py-3 shadow-lg shadow-vino/10">
                 <p className="font-display text-3xl font-extrabold leading-none">+400</p>
@@ -264,7 +264,7 @@ export default function Home() {
               </div>
               <div className="grid gap-4">
                 <div className="relative aspect-square overflow-hidden rounded-[1.75rem]">
-                  <Image src="/images/productos/peluches.jpg" alt="Peluches de pollito para mascotas, del catálogo Mister Pets" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
+                  <Image src="/images/productos/fuente.jpg" alt="Gato tomando agua de una fuente para mascotas del catálogo Mister Pets" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
                 </div>
                 <div className="rounded-[1.75rem] bg-durazno p-5 text-vino">
                   <p className="font-display text-4xl font-extrabold">Bogotá</p>
@@ -316,7 +316,7 @@ export default function Home() {
               <p className="font-bold text-cacao">Preguntas frecuentes</p>
               <h2 className="mt-2 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Antes de tu primer pedido.</h2>
               <div className="relative mt-8 hidden aspect-square max-w-sm overflow-hidden rounded-full lg:block">
-                <Image src="/images/hamster.jpg" alt="Hámster de pie mirando a la cámara" fill sizes="25vw" className="object-cover" />
+                <Image src="/images/gato.jpg" alt="Gato atigrado de ojos verdes mirando hacia arriba" fill sizes="25vw" className="object-cover" />
               </div>
             </div>
             <div className="divide-y divide-arena border-y border-arena">
@@ -341,7 +341,7 @@ export default function Home() {
                 Pide el catálogo y empieza a vender esta semana.
               </h2>
               <p className="mt-4 max-w-lg text-lg">
-                Te respondemos por WhatsApp con referencias y precios mayoristas. Pedido mínimo {PEDIDO_MINIMO}.
+                Te respondemos por WhatsApp con referencias y precios mayoristas. Pedido mínimo {PEDIDO_MINIMO_TEXTO}.
               </p>
               <CatalogButton className="mt-8" />
             </div>
@@ -412,6 +412,9 @@ export default function Home() {
         <div className="border-t border-crema/15">
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-crema/70 sm:flex-row sm:justify-between">
             <p>© 2026 Mister Pets. Venta al por mayor para negocios.</p>
+            <p className="sm:max-w-md">
+              Fotos de pet shop y veterinaria: PaulGorduiz106 (CC BY-SA 4.0) y Shixart1985 (CC BY 2.0), vía Wikimedia Commons.
+            </p>
             <p>
               Built with Claude Web Builder by{" "}
               <a href="https://tododeia.com" target="_blank" rel="noopener noreferrer" className="underline">

@@ -31,16 +31,16 @@ _Pendiente._
 
 ## Datos confirmados por Mister Pets
 - Todo opera desde **Bogotá** (bodega y despachos).
-- **Pedido mínimo: $300.000.**
+- **Pedido mínimo: $300.000 en Bogotá y $500.000 fuera de Bogotá.**
 - Referente visual: https://calabazapets.com/ (banner grande redondeado, categorías con íconos, bloques con fotos de animales, footer oscuro con columnas).
 - La página es **informativa para clientes mayoristas**; la venta se cierra por WhatsApp.
 
 ## Pendiente por confirmar (está provisional en `src/content.ts`)
 - [ ] Dirección exacta en Bogotá y horario de atención.
 - [x] Líneas de producto según el índice del Catálogo Mayorista 2026 (Canva), con fotos reales del catálogo en `public/images/productos/`.
-- [ ] Testimonios reales de clientes (hoy son de ejemplo).
-- [ ] Logo oficial en alta calidad (PNG o SVG); hoy se usa la foto de perfil de Instagram (150 px) en `public/images/logo-mister-pets.png`.
-- [ ] Fotos reales de bodega y producto; hoy son fotos de Unsplash de ejemplo en `public/images/`.
+- [ ] Testimonios reales de clientes: hoy son **ficticios** (nombres inventados). Reemplazar o quitar antes del lanzamiento oficial.
+- [x] Logo oficial en alta calidad (`brand/logo-mister-pets-original.png`).
+- [ ] Fotos reales de bodega y de clientes. Portada y productos ya usan fotos del catálogo; pet shop y veterinaria son fotos libres de Wikimedia Commons (con crédito en el pie de página).
 - [ ] Respuesta a "¿Venden al detal?" y tiempos/costos de envío.
 
 ## Cómo verla en tu computador

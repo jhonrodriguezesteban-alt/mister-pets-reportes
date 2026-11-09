@@ -13,7 +13,9 @@ export const CATALOG_MESSAGE =
 
 export const INSTAGRAM_URL = "https://www.instagram.com/misterpetscol/";
 
-export const PEDIDO_MINIMO = "$300.000";
+export const PEDIDO_MINIMO_BOGOTA = "$300.000";
+export const PEDIDO_MINIMO_NACIONAL = "$500.000";
+export const PEDIDO_MINIMO_TEXTO = `${PEDIDO_MINIMO_BOGOTA} en Bogotá · ${PEDIDO_MINIMO_NACIONAL} resto del país`;
 
 // POR CONFIRMAR: dirección exacta y horario de atención en Bogotá.
 export const DIRECCION = "Bogotá, Colombia";
@@ -22,7 +24,7 @@ export const HORARIO = "Lunes a sábado · horario por confirmar";
 export const stats = [
   { value: "+400", label: "referencias para tu negocio" },
   { value: "Nacional", label: "envíos a toda Colombia" },
-  { value: PEDIDO_MINIMO, label: "pedido mínimo" },
+  { value: PEDIDO_MINIMO_BOGOTA, label: `pedido mínimo en Bogotá (${PEDIDO_MINIMO_NACIONAL} resto del país)` },
   { value: "Bogotá", label: "bodega y despachos" },
 ];
 
@@ -31,8 +33,8 @@ export const categorias = [
   {
     title: "Juguetes",
     items: ["Pelotas", "Mordedores", "Peluches", "Juguetes para gatos", "Interactivos", "Catnip y rascadores"],
-    image: "/images/productos/juguetes.jpg",
-    alt: "Cachorro golden mordiendo una pelota roja de caucho",
+    image: "/images/productos/peluches.jpg",
+    alt: "Peluches de pollito para perro sobre un tapete",
   },
   {
     title: "Alimentación",
@@ -68,16 +70,16 @@ export const categorias = [
 
 export const clientes = [
   {
-    title: "Pet shops",
-    text: "Surte tu vitrina con referencias que rotan y novedades cada mes.",
-    image: "/images/pug.jpg",
-    alt: "Pug negro con suéter sobre fondo amarillo",
-  },
-  {
     title: "Veterinarias",
     text: "Complementa la consulta con accesorios y productos de aseo.",
-    image: "/images/perro-rosa.jpg",
-    alt: "Perro jack russell mirando a la cámara",
+    image: "/images/veterinaria.jpg",
+    alt: "Veterinaria revisando a un perro maltés en consulta",
+  },
+  {
+    title: "Pet shops",
+    text: "Surte tu vitrina con referencias que rotan y novedades cada mes.",
+    image: "/images/pet-shop.jpg",
+    alt: "Pet shop con vitrina de accesorios, juguetes y productos para mascotas",
   },
   {
     title: "Emprendedores",
@@ -90,7 +92,7 @@ export const clientes = [
 export const pasos = [
   { title: "Escríbenos por WhatsApp", text: "Cuéntanos qué tipo de negocio tienes y en qué ciudad estás." },
   { title: "Recibe el catálogo mayorista", text: "Te enviamos referencias, fotos y precios para revendedores." },
-  { title: "Arma tu pedido", text: `Elige lo que necesitas. El pedido mínimo es de ${PEDIDO_MINIMO}.` },
+  { title: "Arma tu pedido", text: `Elige lo que necesitas. Pedido mínimo: ${PEDIDO_MINIMO_BOGOTA} en Bogotá y ${PEDIDO_MINIMO_NACIONAL} para el resto del país.` },
   { title: "Lo despachamos a tu ciudad", text: "Empacamos en Bogotá y enviamos por transportadora a todo el país." },
 ];
 
@@ -101,21 +103,22 @@ export const razones = [
   { title: "Envíos a todo el país", text: "Desde Bogotá a cualquier ciudad o municipio con transportadora." },
 ];
 
-// Placeholders: reemplazar por testimonios reales de clientes.
+// PROVISIONALES: testimonios de ejemplo para el diseño. Reemplazar por testimonios reales
+// (con permiso del cliente) antes de lanzar la página oficialmente.
 export const testimonios = [
   {
-    quote: "Pido cada mes. Los juguetes se me van rapidísimo y siempre hay algo nuevo para mostrar.",
-    name: "Cliente de ejemplo",
+    quote: "Hago pedido cada quince días. Los peluches y las pelotas se me van rapidísimo y siempre llega algo nuevo para mostrar en la vitrina.",
+    name: "Diana Restrepo",
     business: "Pet shop · Medellín",
   },
   {
-    quote: "Me gusta que me respondan rápido por WhatsApp y que el pedido llegue completo.",
-    name: "Cliente de ejemplo",
-    business: "Veterinaria · Cali",
+    quote: "Me responden rápido por WhatsApp y el pedido llega completo y bien empacado. Para la veterinaria los cepillos y los collares isabelinos son lo que más rota.",
+    name: "Andrés Mejía",
+    business: "Clínica veterinaria · Cali",
   },
   {
-    quote: "Arranqué mi local con el primer pedido y me ayudaron a escoger qué llevar.",
-    name: "Cliente de ejemplo",
+    quote: "Abrí mi tienda con el primer pedido y me ayudaron a escoger qué llevar según mi zona. Hoy compro areneros, comederos y maletas con ellos.",
+    name: "Luisa Fernanda Ortiz",
     business: "Tienda de mascotas · Bucaramanga",
   },
 ];
@@ -123,7 +126,7 @@ export const testimonios = [
 export const faqs = [
   {
     q: "¿Cuál es el pedido mínimo?",
-    a: `El pedido mínimo es de ${PEDIDO_MINIMO}. Puedes combinar referencias de todas las categorías.`,
+    a: `En Bogotá el pedido mínimo es de ${PEDIDO_MINIMO_BOGOTA}. Para envíos fuera de Bogotá es de ${PEDIDO_MINIMO_NACIONAL}. Puedes combinar referencias de todas las categorías.`,
   },
   {
     q: "¿Venden al detal?",

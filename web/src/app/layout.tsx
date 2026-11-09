@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://misterpets.vercel.app"),
   title: "Mister Pets | Mayorista de productos para mascotas en Colombia",
   description:
-    "Importador mayorista de productos para mascotas en Bogotá. Más de 400 referencias para pet shops, veterinarias y locales de mascotas, con envíos a toda Colombia. Pedido mínimo $300.000.",
+    "Importador mayorista de productos para mascotas en Bogotá. Más de 400 referencias para pet shops, veterinarias y locales de mascotas, con envíos a toda Colombia. Pedido mínimo $300.000 en Bogotá y $500.000 para el resto del país.",
   openGraph: {
     title: "Mister Pets | Mayorista Pet Shop Colombia",
     description:
