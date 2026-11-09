@@ -5,6 +5,7 @@ import { Logo } from "@/components/logo";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { CatalogEmbed } from "@/components/catalog-embed";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import { HeroCarousel } from "@/components/hero-carousel";
 import {
   CATALOG_MESSAGE,
   DIRECCION,
@@ -12,8 +13,6 @@ import {
   MAPS_URL,
   VISITA_MESSAGE,
   INSTAGRAM_URL,
-  PEDIDO_MINIMO_BOGOTA,
-  PEDIDO_MINIMO_NACIONAL,
   PEDIDO_MINIMO_TEXTO,
   WHATSAPP_DISPLAY,
   categorias,
@@ -59,54 +58,8 @@ export default function Home() {
       <Header />
       <ScrollReveal />
       <main id="inicio">
-        {/* HERO: fondo durazno a todo lo ancho, el cachorro "recortado" sobre el color */}
-        <section className="relative overflow-hidden bg-durazno">
-          <div className="mx-auto grid max-w-7xl items-center gap-4 px-4 pt-10 lg:grid-cols-[1.05fr_0.95fr] lg:pt-0">
-            <div className="reveal relative z-10 py-6 lg:py-16">
-              <p className="text-sm font-bold tracking-[0.14em] uppercase">Importador mayorista · Bogotá</p>
-              <h1 className="mt-5 font-display text-[2.6rem] leading-[0.95] font-extrabold tracking-tight text-balance sm:text-6xl lg:text-[3.9rem]">
-                Surte tu pet shop con el mejor importador de productos pet de Colombia.
-              </h1>
-              <p className="mt-5 max-w-lg text-lg leading-relaxed sm:text-xl">
-                Juguetes, comederos, areneros, pecheras, maletas y más. Un solo proveedor, un solo pedido, despacho a todo el país.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <CatalogButton />
-                <a
-                  href="#catalogo"
-                  className="btn inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-bold ring-2 ring-vino ring-inset hover:bg-vino hover:text-crema"
-                >
-                  Ver catálogo
-                  <ArrowRight aria-hidden className="size-4" />
-                </a>
-              </div>
-              <dl className="mt-8 grid max-w-lg grid-cols-3 divide-x divide-vino/20 border-t border-vino/20 pt-5">
-                <div className="pr-4">
-                  <dt className="text-xs font-semibold tracking-wide uppercase">Referencias</dt>
-                  <dd className="font-display text-3xl font-extrabold">+400</dd>
-                </div>
-                <div className="px-4">
-                  <dt className="text-xs font-semibold tracking-wide uppercase">Mínimo Bogotá</dt>
-                  <dd className="font-display text-3xl font-extrabold">{PEDIDO_MINIMO_BOGOTA.replace(".000", "k")}</dd>
-                </div>
-                <div className="pl-4">
-                  <dt className="text-xs font-semibold tracking-wide uppercase">Resto del país</dt>
-                  <dd className="font-display text-3xl font-extrabold">{PEDIDO_MINIMO_NACIONAL.replace(".000", "k")}</dd>
-                </div>
-              </dl>
-            </div>
-            <div className="relative -mx-4 h-[360px] sm:h-[460px] lg:mx-0 lg:h-[640px]">
-              <Image
-                src="/images/hero-cachorro-pelota.webp"
-                alt="Cachorro golden mordiendo una pelota de caucho del catálogo Mister Pets"
-                fill
-                priority
-                sizes="(min-width: 1024px) 48vw, 100vw"
-                className="hero-img object-contain object-bottom mix-blend-multiply"
-              />
-            </div>
-          </div>
-        </section>
+        {/* PORTADA: carrusel con slides por línea de producto */}
+        <HeroCarousel waHref={catalogHref} visitHref={whatsappLink(VISITA_MESSAGE)} />
 
         {/* FRANJA EN MOVIMIENTO */}
         <div className="marquee-wrap overflow-hidden border-y-4 border-vino bg-vino py-4 text-crema" aria-hidden>
