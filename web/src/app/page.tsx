@@ -12,6 +12,7 @@ import {
 import { Header } from "@/components/header";
 import { Logo } from "@/components/logo";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { CatalogEmbed } from "@/components/catalog-embed";
 import {
   CATALOG_MESSAGE,
   DIRECCION,
@@ -158,16 +159,35 @@ export default function Home() {
               ))}
             </ul>
             <div className="mt-8 flex flex-col items-start gap-3 rounded-[1.75rem] bg-vino p-6 text-crema sm:flex-row sm:items-center sm:justify-between sm:p-8">
-              <p className="font-display text-xl font-bold sm:text-2xl">Más de 400 referencias con fotos, medidas y precios en el catálogo mayorista.</p>
+              <p className="font-display text-xl font-bold sm:text-2xl">Más de 400 referencias con fotos y medidas en el catálogo mayorista.</p>
               <a
-                href={catalogHref}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#catalogo"
                 className="btn inline-flex shrink-0 items-center gap-2 rounded-full bg-durazno px-6 py-3.5 font-bold text-vino hover:bg-durazno-200"
               >
-                <MessageCircle aria-hidden className="size-5" />
-                Pedir catálogo
+                <ArrowRight aria-hidden className="size-5" />
+                Ver catálogo
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* CATÁLOGO */}
+        <section id="catalogo" aria-labelledby="catalogo-titulo" className="scroll-mt-32 bg-durazno-200/50 px-4 py-14 sm:py-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="font-bold text-cacao">Catálogo Mayorista 2026</p>
+              <h2 id="catalogo-titulo" className="mt-2 font-display text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
+                Mira todo el surtido sin salir de aquí.
+              </h2>
+              <p className="mt-4 text-lg text-cacao">
+                Pasa las páginas con las flechas. Anota los códigos (MP…) de lo que te interesa y pídenos los precios por WhatsApp.
+              </p>
+            </div>
+            <div className="mt-10">
+              <CatalogEmbed />
+            </div>
+            <div className="mt-8 flex justify-center">
+              <CatalogButton>Pedir precios por WhatsApp</CatalogButton>
             </div>
           </div>
         </section>

@@ -11,6 +11,9 @@ export function whatsappLink(message: string) {
 export const CATALOG_MESSAGE =
   "Hola Mister Pets, tengo un negocio de mascotas y quiero recibir el catálogo mayorista.";
 
+// Catálogo Mayorista en Canva (diseño "Catálogo", sin precios). Enlace de vista pública.
+export const CATALOGO_CANVA_URL = "https://www.canva.com/design/DAHYA_nN6w8/11h-uMBRWWkbT2mX9FksNg/view";
+
 export const INSTAGRAM_URL = "https://www.instagram.com/misterpetscol/";
 
 export const PEDIDO_MINIMO_BOGOTA = "$300.000";
@@ -139,7 +142,7 @@ export const faqs = [
   },
   {
     q: "¿Cómo recibo el catálogo y los precios?",
-    a: "Escríbenos por WhatsApp y te lo enviamos con los precios mayoristas actualizados.",
+    a: "El catálogo está en esta página, en la sección Catálogo. Para precios mayoristas actualizados escríbenos por WhatsApp y te los enviamos.",
   },
   {
     q: "¿Puedo visitar la bodega?",

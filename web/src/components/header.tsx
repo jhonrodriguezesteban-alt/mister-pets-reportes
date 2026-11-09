@@ -6,12 +6,12 @@ import { CATALOG_MESSAGE, PEDIDO_MINIMO_TEXTO, whatsappLink } from "@/content";
 import { Logo } from "./logo";
 
 const nav = [
-  { href: "#productos", label: "Productos" },
-  { href: "#clientes", label: "¿Para quién?" },
-  { href: "#como-comprar", label: "Cómo comprar" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#preguntas", label: "Preguntas" },
-  { href: "#visitanos", label: "Visítanos" },
+  { href: "/#productos", label: "Productos" },
+  { href: "/#catalogo", label: "Catálogo" },
+  { href: "/#clientes", label: "¿Para quién?" },
+  { href: "/#como-comprar", label: "Cómo comprar" },
+  { href: "/#preguntas", label: "Preguntas" },
+  { href: "/#visitanos", label: "Visítanos" },
 ];
 
 export function Header() {
@@ -31,11 +31,11 @@ export function Header() {
 
       <div className="border-b border-arena/70 bg-crema/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-          <a href="#inicio" aria-label="Mister Pets, ir al inicio">
+          <a href="/#inicio" aria-label="Mister Pets, ir al inicio">
             <Logo />
           </a>
 
-          <nav aria-label="Principal" className="hidden lg:block">
+          <nav aria-label="Principal" className="hidden xl:block">
             <ul className="flex items-center gap-7 text-[15px] font-semibold">
               {nav.map((item) => (
                 <li key={item.href}>
@@ -58,7 +58,7 @@ export function Header() {
               className="btn hidden items-center gap-2 rounded-full bg-vino px-5 py-2.5 text-sm font-bold text-crema hover:bg-vino-700 sm:inline-flex"
             >
               <MessageCircle aria-hidden className="size-4" />
-              Pide el catálogo
+              Cotiza por WhatsApp
             </a>
             <button
               type="button"
@@ -67,14 +67,14 @@ export function Header() {
               aria-controls="menu-movil"
               data-menu-toggle
               aria-label={open ? "Cerrar menú" : "Abrir menú"}
-              className="btn grid size-11 cursor-pointer place-items-center rounded-full border border-vino/20 lg:hidden"
+              className="btn grid size-11 cursor-pointer place-items-center rounded-full border border-vino/20 xl:hidden"
             >
               {open ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
           </div>
         </div>
 
-        <nav id="menu-movil" aria-label="Menú móvil" hidden={!open} className="border-t border-arena/70 lg:hidden">
+        <nav id="menu-movil" aria-label="Menú móvil" hidden={!open} className="border-t border-arena/70 xl:hidden">
             <ul className="mx-auto flex max-w-7xl flex-col px-4 py-2">
               {nav.map((item) => (
                 <li key={item.href}>
