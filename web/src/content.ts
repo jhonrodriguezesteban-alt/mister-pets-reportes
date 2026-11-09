@@ -11,15 +11,19 @@ export function whatsappLink(message: string) {
 export const CATALOG_MESSAGE =
   "Hola Mister Pets, tengo un negocio de mascotas y quiero recibir el catálogo mayorista.";
 
+// Catálogo Mayorista en Canva (diseño "Catálogo", sin precios). Enlace de vista pública.
+export const CATALOGO_CANVA_URL = "https://www.canva.com/design/DAHYA_nN6w8/11h-uMBRWWkbT2mX9FksNg/view";
+
 export const INSTAGRAM_URL = "https://www.instagram.com/misterpetscol/";
 
 export const PEDIDO_MINIMO_BOGOTA = "$300.000";
 export const PEDIDO_MINIMO_NACIONAL = "$500.000";
 export const PEDIDO_MINIMO_TEXTO = `${PEDIDO_MINIMO_BOGOTA} en Bogotá · ${PEDIDO_MINIMO_NACIONAL} resto del país`;
 
-// POR CONFIRMAR: dirección exacta y horario de atención en Bogotá.
-export const DIRECCION = "Bogotá, Colombia";
-export const HORARIO = "Lunes a sábado · horario por confirmar";
+export const DIRECCION = "Calle 10 #20-35, Bodega 317, CC Puerto Príncipe, Bogotá";
+export const HORARIO = "Lunes a viernes 9:00 a.m. – 5:00 p.m. · Sábados 9:00 a.m. – 2:00 p.m.";
+export const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Calle 10 #20-35 Centro Comercial Puerto Príncipe, Bogotá")}`;
+export const VISITA_MESSAGE = "Hola Mister Pets, quiero agendar una cita para visitar la bodega.";
 
 export const stats = [
   { value: "+400", label: "referencias para tu negocio" },
@@ -138,10 +142,10 @@ export const faqs = [
   },
   {
     q: "¿Cómo recibo el catálogo y los precios?",
-    a: "Escríbenos por WhatsApp y te lo enviamos con los precios mayoristas actualizados.",
+    a: "El catálogo está en esta página, en la sección Catálogo. Para precios mayoristas actualizados escríbenos por WhatsApp y te los enviamos.",
   },
   {
     q: "¿Puedo visitar la bodega?",
-    a: "Sí, estamos en Bogotá. Escríbenos antes para confirmarte el horario de atención.",
+    a: "Sí. Somos bodega mayorista en la Calle 10 #20-35, Bodega 317, CC Puerto Príncipe (Bogotá). Atendemos con cita: agéndala por WhatsApp. Lunes a viernes de 9:00 a.m. a 5:00 p.m. y sábados de 9:00 a.m. a 2:00 p.m.",
   },
 ];

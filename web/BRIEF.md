@@ -35,8 +35,11 @@ _Pendiente._
 - Referente visual: https://calabazapets.com/ (banner grande redondeado, categorías con íconos, bloques con fotos de animales, footer oscuro con columnas).
 - La página es **informativa para clientes mayoristas**; la venta se cierra por WhatsApp.
 
+## Catálogo
+- Insertado desde Canva (diseño "Catálogo", sin precios) en la sección `#catalogo` y en `/catalogo`. Se actualiza solo al editar en Canva. Enlace en `src/content.ts` (CATALOGO_CANVA_URL).
+
 ## Pendiente por confirmar (está provisional en `src/content.ts`)
-- [ ] Dirección exacta en Bogotá y horario de atención.
+- [x] Dirección: Calle 10 #20-35, Bodega 317, CC Puerto Príncipe (Bogotá). Horario con cita: L-V 9am-5pm, sáb 9am-2pm.
 - [x] Líneas de producto según el índice del Catálogo Mayorista 2026 (Canva), con fotos reales del catálogo en `public/images/productos/`.
 - [ ] Testimonios reales de clientes: hoy son **ficticios** (nombres inventados). Reemplazar o quitar antes del lanzamiento oficial.
 - [x] Logo oficial en alta calidad (`brand/logo-mister-pets-original.png`).
