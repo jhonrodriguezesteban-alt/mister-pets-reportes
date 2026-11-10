@@ -139,3 +139,32 @@ details[open] .chev { transform: rotate(180deg); }
   .js-reveal [data-reveal] { opacity: 1; transform: none; transition: none; }
   .marquee, .hero-img, .site-header, .steps-line, .img-parallax { animation: none; }
 }
+
+/* ---------- Carrusel de portada ---------- */
+.hc-slide { visibility: hidden; transition: visibility 0s linear 700ms; }
+.hc-slide[data-on="true"] { visibility: visible; transition: visibility 0s; }
+.hc-slide .hc-up {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+}
+.hc-slide .hc-img {
+  opacity: 0;
+  transform: translateX(32px) scale(0.97);
+  transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
+}
+.hc-slide .hc-pop {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 450ms var(--ease-out), transform 450ms var(--ease-out);
+}
+.hc-slide[data-on="true"] .hc-up,
+.hc-slide[data-on="true"] .hc-img,
+.hc-slide[data-on="true"] .hc-pop { opacity: 1; transform: none; }
+.hc-slide[data-on="false"] .hc-up,
+.hc-slide[data-on="false"] .hc-img,
+.hc-slide[data-on="false"] .hc-pop { transition-delay: 0ms !important; transition-duration: 300ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hc-slide .hc-up, .hc-slide .hc-img, .hc-slide .hc-pop { transform: none; transition: opacity 200ms linear; }
+}
