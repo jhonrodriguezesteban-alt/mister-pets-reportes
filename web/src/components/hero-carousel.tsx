@@ -36,6 +36,9 @@ function Framed({ src, alt, className = "", sizes }: { src: string; alt: string;
   );
 }
 
+// Tiempo que se muestra cada slide antes de pasar al siguiente.
+const SLIDE_MS = 4500;
+
 export function HeroCarousel({ waHref, visitHref }: { waHref: string; visitHref: string }) {
   const slides: Slide[] = [
     {
@@ -165,7 +168,7 @@ export function HeroCarousel({ waHref, visitHref }: { waHref: string; visitHref:
 
   useEffect(() => {
     if (paused || reduced) return;
-    const t = setTimeout(() => go(active + 1), 7000);
+    const t = setTimeout(() => go(active + 1), SLIDE_MS);
     return () => clearTimeout(t);
   }, [active, paused, reduced, go]);
 
@@ -176,9 +179,11 @@ export function HeroCarousel({ waHref, visitHref }: { waHref: string; visitHref:
       aria-roledescription="carrusel"
       aria-label="Destacados de Mister Pets"
       className={`relative overflow-hidden transition-colors duration-700 ${bg[slides[active].theme]}`}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
+      // Solo se pausa con el mouse encima o al navegar con teclado.
+      // En celular un toque no lo deja pausado.
+      onPointerEnter={(e) => e.pointerType === "mouse" && setPaused(true)}
+      onPointerLeave={(e) => e.pointerType === "mouse" && setPaused(false)}
+      onFocusCapture={(e) => (e.target as HTMLElement).matches(":focus-visible") && setPaused(true)}
       onBlurCapture={() => setPaused(false)}
       onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
       onTouchEnd={(e) => {
