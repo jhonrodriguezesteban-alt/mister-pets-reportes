@@ -10,6 +10,7 @@ type Slide = {
   eyebrow: string;
   title: string;
   text: string;
+  short: string;
   cta: { label: string; href: string; external?: boolean };
   visual: React.ReactNode;
 };
@@ -20,7 +21,7 @@ function Sticker({ children, className = "", tone = "vino", delay = 0 }: { child
   return (
     <span
       style={{ transitionDelay: `${300 + delay}ms` }}
-      className={`hc-pop absolute grid size-24 place-items-center rounded-full p-3 text-center font-display text-sm leading-tight font-extrabold shadow-lg shadow-vino/20 sm:size-28 sm:text-base ${tones[tone]} ${className}`}
+      className={`hc-pop absolute grid size-[4.5rem] place-items-center rounded-full p-2 text-center font-display text-[11px] leading-tight font-extrabold shadow-lg shadow-vino/20 sm:size-28 sm:p-3 sm:text-base ${tones[tone]} ${className}`}
     >
       {children}
     </span>
@@ -29,7 +30,7 @@ function Sticker({ children, className = "", tone = "vino", delay = 0 }: { child
 
 function Framed({ src, alt, className = "", sizes }: { src: string; alt: string; className?: string; sizes: string }) {
   return (
-    <div className={`absolute overflow-hidden rounded-2xl ring-8 ring-crema shadow-xl shadow-vino/20 ${className}`}>
+    <div className={`absolute overflow-hidden rounded-xl ring-4 ring-crema shadow-xl sm:rounded-2xl sm:ring-8 shadow-vino/20 ${className}`}>
       <Image src={src} alt={alt} fill sizes={sizes} className="object-cover" />
     </div>
   );
@@ -43,6 +44,7 @@ export function HeroCarousel({ waHref, visitHref }: { waHref: string; visitHref:
       eyebrow: "Importador mayorista · Bogotá",
       title: "Surte tu pet shop con el mejor importador de productos pet de Colombia.",
       text: "Juguetes, comederos, areneros, pecheras, maletas y más. Un solo proveedor, un solo pedido, despacho a todo el país.",
+      short: "Juguetes, comederos, areneros y más. Despacho a todo el país.",
       cta: { label: "Cotiza por WhatsApp", href: waHref, external: true },
       visual: (
         <>
@@ -69,6 +71,7 @@ export function HeroCarousel({ waHref, visitHref }: { waHref: string; visitHref:
       eyebrow: "Línea gatos",
       title: "Todo para el cliente que llega con su gato.",
       text: "Areneros tapados, fuentes, rascadores, juguetes y pecheras. Lo que piden en mostrador, en un solo pedido.",
+      short: "Areneros, fuentes, rascadores y juguetes en un solo pedido.",
       cta: { label: "Ver catálogo", href: "#catalogo" },
       visual: (
         <>
@@ -96,6 +99,7 @@ export function HeroCarousel({ waHref, visitHref }: { waHref: string; visitHref:
       eyebrow: "Ropa y accesorios",
       title: "Pecheras, collares y traíllas en todas las tallas.",
       text: "De XXS a XXL, para perros y gatos, con colores que se venden solos en la vitrina.",
+      short: "De XXS a XXL, para perros y gatos.",
       cta: { label: "Pedir referencias", href: waHref, external: true },
       visual: (
         <>
@@ -126,6 +130,7 @@ export function HeroCarousel({ waHref, visitHref }: { waHref: string; visitHref:
       eyebrow: "Bodega mayorista en Bogotá",
       title: "Ven a ver el surtido en Puerto Príncipe.",
       text: "Calle 10 #20-35, Bodega 317. Atendemos con cita de lunes a viernes de 9:00 a.m. a 5:00 p.m. y sábados hasta las 2:00 p.m.",
+      short: "Calle 10 #20-35, Bodega 317. Con cita, de lunes a sábado.",
       cta: { label: "Agendar cita", href: visitHref, external: true },
       visual: (
         <>
@@ -200,21 +205,22 @@ export function HeroCarousel({ waHref, visitHref }: { waHref: string; visitHref:
               aria-hidden={!on}
               inert={!on}
               data-on={on}
-              className="hc-slide grid items-center gap-4 [grid-area:1/1] lg:grid-cols-[1.05fr_0.95fr]"
+              className="hc-slide grid items-center gap-2 [grid-area:1/1] sm:gap-4 lg:grid-cols-[1.05fr_0.95fr]"
             >
-              <div className="relative z-10 pt-10 pb-4 lg:py-20">
-                <p className="hc-up text-sm font-bold tracking-[0.14em] uppercase">{s.eyebrow}</p>
-                <Title className="hc-up mt-5 font-display text-[2.15rem] leading-[0.95] font-extrabold tracking-tight text-balance sm:text-6xl lg:text-[3.9rem]" style={{ transitionDelay: "60ms" }}>
+              <div className="relative z-10 pt-3 pb-2 sm:pt-10 sm:pb-4 lg:py-20">
+                <p className="hc-up text-xs font-bold tracking-[0.14em] uppercase sm:text-sm">{s.eyebrow}</p>
+                <Title className="hc-up mt-2 font-display text-[1.75rem] leading-[0.98] sm:mt-5 font-extrabold tracking-tight text-balance sm:text-6xl lg:text-[3.9rem]" style={{ transitionDelay: "60ms" }}>
                   {s.title}
                 </Title>
-                <p className="hc-up mt-5 max-w-lg text-lg leading-relaxed opacity-90 sm:text-xl" style={{ transitionDelay: "120ms" }}>
-                  {s.text}
+                <p className="hc-up mt-2 max-w-lg text-[15px] leading-snug opacity-90 sm:mt-5 sm:text-xl sm:leading-relaxed" style={{ transitionDelay: "120ms" }}>
+                  <span className="sm:hidden">{s.short}</span>
+                  <span className="hidden sm:inline">{s.text}</span>
                 </p>
-                <div className="hc-up mt-8" style={{ transitionDelay: "180ms" }}>
+                <div className="hc-up mt-4 sm:mt-8" style={{ transitionDelay: "180ms" }}>
                   <a
                     href={s.cta.href}
                     {...(s.cta.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className={`btn inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-bold ${
+                    className={`btn inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold sm:px-6 sm:py-3.5 sm:text-base ${
                       s.theme === "vino" ? "bg-durazno text-vino hover:bg-durazno-200" : "bg-vino text-crema hover:bg-vino-700"
                     }`}
                   >
@@ -224,14 +230,14 @@ export function HeroCarousel({ waHref, visitHref }: { waHref: string; visitHref:
                   </a>
                 </div>
               </div>
-              <div className="relative -mx-4 h-[340px] sm:h-[440px] lg:mx-0 lg:h-[600px]">{s.visual}</div>
+              <div className="relative -mx-4 order-first h-[235px] sm:order-none sm:h-[440px] lg:mx-0 lg:h-[600px]">{s.visual}</div>
             </div>
           );
         })}
       </div>
 
       {/* Controles */}
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 pb-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 pb-3 sm:pb-6">
         <div className="flex items-center gap-2" role="tablist" aria-label="Elegir slide">
           {slides.map((s, i) => (
             <button
@@ -251,11 +257,11 @@ export function HeroCarousel({ waHref, visitHref }: { waHref: string; visitHref:
             </button>
           ))}
         </div>
-        <div className="flex gap-2">
-          <button type="button" onClick={() => go(active - 1)} aria-label="Slide anterior" className="btn grid size-11 cursor-pointer place-items-center rounded-full ring-2 ring-current ring-inset">
+        <div className="hidden gap-2 sm:flex">
+          <button type="button" onClick={() => go(active - 1)} aria-label="Slide anterior" className="btn grid size-10 cursor-pointer place-items-center rounded-full ring-2 ring-current ring-inset sm:size-11">
             <ArrowLeft aria-hidden className="size-5" />
           </button>
-          <button type="button" onClick={() => go(active + 1)} aria-label="Slide siguiente" className="btn grid size-11 cursor-pointer place-items-center rounded-full ring-2 ring-current ring-inset">
+          <button type="button" onClick={() => go(active + 1)} aria-label="Slide siguiente" className="btn grid size-10 cursor-pointer place-items-center rounded-full ring-2 ring-current ring-inset sm:size-11">
             <ArrowRight aria-hidden className="size-5" />
           </button>
         </div>
