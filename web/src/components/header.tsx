@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, MessageCircle, Truck } from "lucide-react";
-import { CATALOG_MESSAGE, PEDIDO_MINIMO_TEXTO, whatsappLink } from "@/content";
+import { Menu, X, MessageCircle } from "lucide-react";
+import { CATALOG_MESSAGE, PEDIDO_MINIMO_BOGOTA, PEDIDO_MINIMO_NACIONAL, PEDIDO_MINIMO_TEXTO, whatsappLink } from "@/content";
 import { Logo } from "./logo";
 
 const nav = [
@@ -14,18 +14,37 @@ const nav = [
   { href: "/#visitanos", label: "Visítanos" },
 ];
 
+const avisos = [
+  "Envíos a toda Colombia",
+  `Pedido mínimo ${PEDIDO_MINIMO_BOGOTA} en Bogotá`,
+  `${PEDIDO_MINIMO_NACIONAL} para el resto del país`,
+  "Venta exclusiva para negocios",
+  "+400 referencias en bodega",
+  "Bodega en CC Puerto Príncipe, Bogotá",
+];
+
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="site-header sticky top-0 z-40">
-      <div className="bg-vino text-crema text-xs sm:text-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-2 sm:justify-between">
-          <p className="flex items-center gap-2">
-            <Truck aria-hidden className="size-4 shrink-0" />
-            Envíos a toda Colombia · Pedido mínimo {PEDIDO_MINIMO_TEXTO}
-          </p>
-          <p className="hidden sm:block">Venta exclusiva para negocios</p>
+      <div className="marquee-wrap overflow-hidden bg-vino text-crema text-xs sm:text-sm">
+        <p className="sr-only">
+          Envíos a toda Colombia. Pedido mínimo {PEDIDO_MINIMO_TEXTO}. Venta exclusiva para negocios.
+        </p>
+        <div className="marquee py-2" style={{ animationDuration: "45s" }} aria-hidden>
+          {[0, 1].map((k) => (
+            <ul key={k} className="flex shrink-0 items-center">
+              {avisos.map((t) => (
+                <li key={t + k} className="flex items-center pl-10 whitespace-nowrap">
+                  {t}
+                  <svg viewBox="0 0 24 24" className="ml-10 size-3 shrink-0 text-durazno" fill="currentColor">
+                    <path d="M12 2l2.4 7.6H22l-6.2 4.6 2.4 7.6L12 17.2 5.8 21.8l2.4-7.6L2 9.6h7.6z" />
+                  </svg>
+                </li>
+              ))}
+            </ul>
+          ))}
         </div>
       </div>
 
