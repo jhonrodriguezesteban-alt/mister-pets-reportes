@@ -53,3 +53,22 @@ npm install
 npm run dev
 ```
 Luego abre http://localhost:3000. Los textos se cambian en `src/content.ts`.
+
+## Venta mayorista con Google (método Mike Munsby)
+Implementado en la web:
+- Formulario de cotización (`#cotizar` y en cada página de línea) que califica: tipo de negocio, ciudad, líneas, presupuesto. Abre WhatsApp con el mensaje armado.
+- Páginas por intención de búsqueda (`src/landings.ts`): 6 líneas de producto + "proveedor para veterinarias" + "surtido para abrir pet shop" (kit de apertura). Con datos estructurados de preguntas frecuentes y en el sitemap.
+- Medición lista: eventos `whatsapp_click`, `cotizacion_enviada`, `llamada_click`, `mapa_click`.
+
+Para activar la medición, en Vercel → Settings → Environment Variables:
+- `NEXT_PUBLIC_GA_ID` = ID de Google Analytics 4 (G-…)
+- `NEXT_PUBLIC_GADS_ID` = ID de Google Ads (AW-…)
+- `NEXT_PUBLIC_GADS_CONVERSION` = etiqueta de conversión (AW-…/…)
+Luego volver a desplegar (Deployments → Redeploy).
+
+Pendiente de Mister Pets:
+- [ ] Dominio propio (.com.co) — antes de pautar.
+- [ ] Perfil de Google Maps (Google Business Profile) de la bodega + reseñas de clientes.
+- [ ] Cuentas de Google Analytics y Google Ads (pasar los IDs).
+- [ ] Fotos/video reales de la bodega; testimonios y cifras reales (clientes, ciudades, años).
+- [ ] Confirmar qué líneas se venden por docena o por caja.

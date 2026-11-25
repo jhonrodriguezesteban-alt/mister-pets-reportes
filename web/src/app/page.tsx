@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight, ChevronDown, Clock, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Header } from "@/components/header";
-import { Logo } from "@/components/logo";
+import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { CatalogEmbed } from "@/components/catalog-embed";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { HeroCarousel } from "@/components/hero-carousel";
+import { QuoteForm } from "@/components/quote-form";
 import {
   CATALOG_MESSAGE,
   DIRECCION,
@@ -97,6 +98,7 @@ export default function Home() {
                   style={{ "--i": i % 3 } as React.CSSProperties}
                   className={`group ${i === 0 ? "sm:col-span-2 lg:row-span-2" : ""}`}
                 >
+                  <a href={`/${c.slug}`} className="block">
                   <div className={`relative overflow-hidden rounded-2xl bg-crema ${i === 0 ? "aspect-[4/3] lg:aspect-auto lg:h-[calc(100%-7rem)]" : "aspect-[4/3]"}`}>
                     <Image
                       src={c.image}
@@ -111,6 +113,10 @@ export default function Home() {
                   </div>
                   <h3 className={`mt-4 font-display font-extrabold ${i === 0 ? "text-3xl sm:text-4xl" : "text-2xl"}`}>{c.title}</h3>
                   <p className="mt-1 text-cacao">{c.items.join(" · ")}</p>
+                  <span className="mt-2 inline-flex items-center gap-1 text-sm font-bold underline-offset-4 group-hover:underline">
+                    Ver línea al por mayor <ArrowRight aria-hidden className="size-4" />
+                  </span>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -186,6 +192,40 @@ export default function Home() {
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* MÁS CLIENTES + KIT DE APERTURA */}
+        <section className="px-4 pb-16 sm:pb-24">
+          <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div data-reveal className="rounded-2xl border-2 border-vino/15 p-6 sm:p-8">
+              <h3 className="font-display text-2xl font-extrabold sm:text-3xl">También surtimos a</h3>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {["Agropecuarias y agroveterinarias", "Peluquerías caninas", "Guarderías y hoteles caninos", "Tiendas online y de redes sociales", "Clínicas veterinarias"].map((t) => (
+                  <li key={t} className="rounded-full bg-durazno-200 px-4 py-2 text-sm font-semibold">{t}</li>
+                ))}
+              </ul>
+              <a href="/proveedor-para-veterinarias" className="mt-6 inline-flex items-center gap-2 font-bold underline underline-offset-4">
+                ¿Tienes una veterinaria? Mira lo que te ofrecemos
+                <ArrowRight aria-hidden className="size-4" />
+              </a>
+            </div>
+            <a
+              href="/surtido-para-abrir-pet-shop"
+              data-reveal
+              style={{ "--i": 1 } as React.CSSProperties}
+              className="group flex flex-col justify-between gap-6 rounded-2xl bg-vino p-6 text-crema sm:p-8"
+            >
+              <div>
+                <p className="text-sm font-bold tracking-[0.14em] text-durazno uppercase">Kit de apertura</p>
+                <h3 className="mt-2 font-display text-3xl leading-tight font-extrabold sm:text-4xl">¿Vas a abrir tu pet shop? Te armamos el primer surtido.</h3>
+                <p className="mt-3 text-crema/80">Según tu local, tu ciudad y tu presupuesto, con lo que más rota en cada línea.</p>
+              </div>
+              <span className="inline-flex items-center gap-2 font-bold text-durazno">
+                Quiero mi kit de apertura
+                <ArrowRight aria-hidden className="size-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+            </a>
           </div>
         </section>
 
@@ -278,6 +318,22 @@ export default function Home() {
           </div>
         </section>
 
+        {/* COTIZAR */}
+        <section id="cotizar" className="scroll-mt-32 bg-vino px-4 py-16 text-crema sm:py-24" data-track-area="cotizar">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <div data-reveal>
+              <p className="text-sm font-bold tracking-[0.14em] text-durazno uppercase">Cotización mayorista</p>
+              <h2 className="mt-3 font-display text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">Cuéntanos de tu negocio y te cotizamos hoy.</h2>
+              <p className="mt-4 max-w-md text-lg text-crema/80">
+                Llenas los datos, se abre WhatsApp con el mensaje listo y te respondemos con referencias y precios mayoristas.
+              </p>
+            </div>
+            <div data-reveal>
+              <QuoteForm origen="inicio" />
+            </div>
+          </div>
+        </section>
+
         {/* PREGUNTAS */}
         <section id="preguntas" className="scroll-mt-32 px-4 py-16 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
@@ -360,75 +416,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* FOOTER */}
-      <footer className="bg-vino text-crema">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <Logo light />
-            <p className="mt-4 max-w-xs text-crema/80">Importador mayorista de productos para mascotas. Bogotá, Colombia.</p>
-          </div>
-          <div>
-            <h2 className="font-display text-lg font-bold text-durazno">Productos</h2>
-            <ul className="mt-4 space-y-2 text-crema/85">
-              {categorias.map((c) => (
-                <li key={c.title}>
-                  <a href="#productos" className="hover:underline">{c.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="font-display text-lg font-bold text-durazno">Mister Pets</h2>
-            <ul className="mt-4 space-y-2 text-crema/85">
-              <li><a href="/catalogo" className="hover:underline">Catálogo</a></li>
-              <li><a href="#como-comprar" className="hover:underline">Cómo comprar</a></li>
-              <li><a href="#nosotros" className="hover:underline">Nosotros</a></li>
-              <li><a href="#preguntas" className="hover:underline">Preguntas frecuentes</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="font-display text-lg font-bold text-durazno">Contacto</h2>
-            <ul className="mt-4 space-y-3 text-crema/85">
-              <li className="flex gap-3">
-                <Phone aria-hidden className="mt-0.5 size-5 shrink-0" />
-                <a href={catalogHref} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  WhatsApp {WHATSAPP_DISPLAY}
-                </a>
-              </li>
-              <li className="flex gap-3">
-                <MapPin aria-hidden className="mt-0.5 size-5 shrink-0" />
-                <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  {DIRECCION}
-                </a>
-              </li>
-              <li className="flex gap-3">
-                <Clock aria-hidden className="mt-0.5 size-5 shrink-0" />
-                {HORARIO}
-              </li>
-              <li className="flex gap-3">
-                <InstagramIcon className="mt-0.5 size-5 shrink-0" />
-                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  @misterpetscol
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-crema/15">
-          <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-crema/70 sm:flex-row sm:justify-between">
-            <p>© 2026 Mister Pets. Venta al por mayor para negocios.</p>
-            <p className="sm:max-w-md">
-              Fotos de pet shop y veterinaria: PaulGorduiz106 (CC BY-SA 4.0) y Shixart1985 (CC BY 2.0), vía Wikimedia Commons.
-            </p>
-            <p>
-              Built with Claude Web Builder by{" "}
-              <a href="https://tododeia.com" target="_blank" rel="noopener noreferrer" className="underline">
-                Tododeia
-              </a>
-            </p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       <WhatsAppFloat href={catalogHref} />
     </>
