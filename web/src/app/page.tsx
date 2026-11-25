@@ -271,16 +271,19 @@ export default function Home() {
         {/* NOSOTROS */}
         <section id="nosotros" className="scroll-mt-32 px-4 py-16 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
-            <div className="grid grid-cols-2 gap-4" data-reveal>
-              <div className="relative row-span-2 aspect-[3/4] overflow-hidden rounded-2xl">
-                <Image src="/images/productos/pechera-gato.jpg" alt="Gato blanco con pechera tejida azul y traílla, del catálogo Mister Pets" fill sizes="(min-width: 1024px) 25vw, 50vw" className="img-parallax object-cover" />
+            {/* Collage: foto principal, segunda foto superpuesta y sello de la bodega */}
+            <div className="relative mx-auto w-full max-w-md pb-[14%] lg:max-w-none" data-reveal>
+              <div className="relative aspect-[4/5] w-[76%] overflow-hidden rounded-2xl">
+                <Image src="/images/productos/pechera-gato.jpg" alt="Gato blanco con pechera tejida azul y traílla, del catálogo Mister Pets" fill sizes="(min-width: 1024px) 34vw, 76vw" className="img-parallax object-cover" />
               </div>
-              <div className="relative aspect-square overflow-hidden rounded-2xl">
-                <Image src="/images/productos/fuente.jpg" alt="Gato tomando agua de una fuente para mascotas del catálogo Mister Pets" fill sizes="(min-width: 1024px) 25vw, 50vw" className="img-parallax object-cover" />
+              <div className="absolute right-0 bottom-0 aspect-square w-[54%] -rotate-2 overflow-hidden rounded-2xl shadow-xl shadow-vino/20 ring-[6px] ring-crema sm:ring-8">
+                <Image src="/images/productos/fuente.jpg" alt="Gato tomando agua de una fuente para mascotas del catálogo Mister Pets" fill sizes="(min-width: 1024px) 24vw, 54vw" className="object-cover" />
               </div>
-              <div className="flex flex-col justify-end rounded-2xl bg-durazno p-5">
-                <p className="text-xs font-bold tracking-wide uppercase">Bodega</p>
-                <p className="font-display text-2xl leading-tight font-extrabold">CC Puerto Príncipe, Bogotá</p>
+              <div className="absolute top-[5%] right-[2%] grid size-28 rotate-6 place-items-center rounded-full bg-durazno p-3 text-center shadow-lg shadow-vino/20 sm:size-36">
+                <p className="font-display text-sm leading-tight font-extrabold sm:text-lg">
+                  <span className="block text-[10px] tracking-[0.14em] uppercase sm:text-xs">Bodega</span>
+                  CC Puerto Príncipe
+                </p>
               </div>
             </div>
             <div>
