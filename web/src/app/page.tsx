@@ -98,8 +98,8 @@ export default function Home() {
                   style={{ "--i": i % 3 } as React.CSSProperties}
                   className={`group ${i === 0 ? "sm:col-span-2 lg:row-span-2" : ""}`}
                 >
-                  <a href={`/${c.slug}`} className="block">
-                  <div className={`relative overflow-hidden rounded-2xl bg-crema ${i === 0 ? "aspect-[4/3] lg:aspect-auto lg:h-[calc(100%-7rem)]" : "aspect-[4/3]"}`}>
+                  <a href={`/${c.slug}`} className="flex h-full flex-col">
+                  <div className={`relative overflow-hidden rounded-2xl bg-crema ${i === 0 ? "aspect-[4/3] lg:aspect-auto lg:min-h-0 lg:flex-1" : "aspect-[4/3]"}`}>
                     <Image
                       src={c.image}
                       alt={c.alt}
