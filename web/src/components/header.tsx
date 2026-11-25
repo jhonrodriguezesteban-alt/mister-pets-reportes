@@ -10,7 +10,7 @@ const nav = [
   { href: "/#catalogo", label: "Catálogo" },
   { href: "/#clientes", label: "¿Para quién?" },
   { href: "/#como-comprar", label: "Cómo comprar" },
-  { href: "/#preguntas", label: "Preguntas" },
+  { href: "/#cotizar", label: "Cotizar" },
   { href: "/#visitanos", label: "Visítanos" },
 ];
 

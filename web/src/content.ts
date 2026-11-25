@@ -36,36 +36,42 @@ export const stats = [
 export const categorias = [
   {
     title: "Juguetes",
+    slug: "juguetes-para-mascotas-al-por-mayor",
     items: ["Pelotas", "Mordedores", "Peluches", "Juguetes para gatos", "Interactivos", "Catnip y rascadores"],
     image: "/images/productos/peluches.jpg",
     alt: "Peluches de pollito para perro sobre un tapete",
   },
   {
     title: "Alimentación",
+    slug: "comederos-y-fuentes-al-por-mayor",
     items: ["Comederos", "Comederos antirreflujo", "Bebederos portátiles", "Dispensadores", "Fuentes y filtros"],
     image: "/images/productos/alimentacion.jpg",
     alt: "Perro french poodle comiendo de un comedero doble elevado",
   },
   {
     title: "Higiene y cuidado",
+    slug: "areneros-y-productos-de-aseo-al-por-mayor",
     items: ["Areneros tapados y abiertos", "Tapetes y pañales", "Cepillos y quita pelos", "Corta uñas", "Máquinas para peluquear"],
     image: "/images/productos/higiene.jpg",
     alt: "Gato recibiendo un cepillado con cepillo autolimpiable",
   },
   {
     title: "Ropa y accesorios",
+    slug: "pecheras-collares-y-ropa-para-mascotas-al-por-mayor",
     items: ["Pecheras y arneses", "Collares y traíllas", "Ropa por tallas", "Accesorios decorativos"],
     image: "/images/productos/accesorios.jpg",
     alt: "Perro pastor australiano con pechera fucsia en el campo",
   },
   {
     title: "Transporte",
+    slug: "maletas-y-guacales-para-mascotas-al-por-mayor",
     items: ["Maletas", "Mochilas tipo cápsula", "Guacales", "Coches"],
     image: "/images/productos/transporte.jpg",
     alt: "Gato asomándose a una maleta de transporte azul",
   },
   {
     title: "Hábitat",
+    slug: "corrales-y-jaulas-para-mascotas-al-por-mayor",
     items: ["Corrales plegables", "Jaulas", "Ruedas y accesorios para hámster"],
     image: "/images/productos/habitat.jpg",
     alt: "Corral octagonal plegable para mascotas",
