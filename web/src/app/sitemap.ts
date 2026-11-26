@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { landings } from "@/landings";
+import { SITE_URL } from "@/content";
 
-const base = "https://misterpets.vercel.app";
+const base = SITE_URL;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
