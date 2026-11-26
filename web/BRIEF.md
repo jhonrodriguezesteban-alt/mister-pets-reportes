@@ -67,7 +67,7 @@ Para activar la medición, en Vercel → Settings → Environment Variables:
 Luego volver a desplegar (Deployments → Redeploy).
 
 Pendiente de Mister Pets:
-- [ ] Dominio propio (.com.co) — antes de pautar.
+- [x] Dominio propio: misterpets.co (configurado en el código; falta conectarlo en Vercel y en el proveedor del dominio).
 - [ ] Perfil de Google Maps (Google Business Profile) de la bodega + reseñas de clientes.
 - [ ] Cuentas de Google Analytics y Google Ads (pasar los IDs).
 - [ ] Fotos/video reales de la bodega; testimonios y cifras reales (clientes, ciudades, años).

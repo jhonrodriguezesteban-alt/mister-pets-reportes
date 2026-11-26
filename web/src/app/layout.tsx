@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@/components/analytics";
+import { SITE_URL } from "@/content";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -17,8 +18,7 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   // Dirección pública del sitio: se usa para armar los enlaces de la imagen de vista previa.
-  // Cambiar cuando se conecte el dominio propio.
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://misterpets.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: "Mister Pets | Mayorista de productos para mascotas en Colombia",
   description:
     "Importador mayorista de productos para mascotas en Bogotá. Más de 400 referencias para pet shops, veterinarias y locales de mascotas, con envíos a toda Colombia. Pedido mínimo $300.000 en Bogotá y $500.000 para el resto del país.",
@@ -43,9 +43,9 @@ const jsonLd = {
   "@type": "Store",
   name: "Mister Pets",
   description: "Importador mayorista de productos para mascotas. Venta a pet shops, veterinarias y tiendas de mascotas con envíos a toda Colombia.",
-  url: "https://misterpets.vercel.app",
-  image: "https://misterpets.vercel.app/opengraph-image.jpg",
-  logo: "https://misterpets.vercel.app/images/logo-mister-pets.png",
+  url: SITE_URL,
+  image: `${SITE_URL}/opengraph-image.jpg`,
+  logo: `${SITE_URL}/images/logo-mister-pets.png`,
   telephone: "+57 312 248 8330",
   priceRange: "$$",
   address: {

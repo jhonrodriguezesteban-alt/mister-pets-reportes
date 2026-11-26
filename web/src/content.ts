@@ -1,6 +1,9 @@
 // Todo el texto y los datos de la página viven aquí para que sea fácil cambiarlos.
 // Lo marcado con "POR CONFIRMAR" es provisional hasta que Mister Pets lo valide.
 
+// Dirección pública del sitio (dominio propio).
+export const SITE_URL = "https://misterpets.co";
+
 export const WHATSAPP_NUMBER = "573122488330";
 export const WHATSAPP_DISPLAY = "+57 312 248 8330";
 
